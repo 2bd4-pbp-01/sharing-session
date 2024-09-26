@@ -1,4 +1,4 @@
-# Concurrent Programming
+# Concurrent Programming issue
 
 #### Daftar Isi
 
@@ -24,14 +24,18 @@
 ### Overview
 
 #### Concurrency
-Concurrency berarti multiple computations yang terjadi secara bersamaan tanpa harus menunggu computation lainnya diselesaikan terlebih dahulu. Dalam pemrograman modern, concurrency sangat penting karena: [1][2]
+Concurrency berarti multiple computations yang terjadi secara bersamaan tanpa harus menunggu computation lainnya diselesaikan terlebih dahulu. 
+Dalam pemrograman modern, concurrency sangat penting karena: [1][2]
 
 1. Situs web harus menangani banyak pengguna secara bersamaan.
 2. Aplikasi mobile sering melakukan pemrosesan di server ("di cloud").
 3. Graphical user interfaces memerlukan pekerjaan latar belakang yang tidak mengganggu pengguna.
 
 #### Concurrent Programming 
-Concurrent Programming adalah model pemrograman yang memungkinkan berbagai bagian dari program berjalan secara concurrent atau tumpang tindih. Dalam pemrograman ini, kamu dapat menulis kode yang memungkinkan berbagai proses atau thread untuk bekerja bersama tanpa harus menunggu salah satu selesai sebelum yang lainnya dimulai. Dengan menggunakan teknik seperti threads, processes, atau coroutines, concurrent programming menjadi landasan penting untuk meningkatkan efisiensi dan kecepatan eksekusi pada sistem modern.[1][2]
+Concurrent Programming adalah model pemrograman yang memungkinkan berbagai bagian dari program berjalan secara concurrent atau tumpang tindih. 
+Dalam pemrograman ini, kamu dapat menulis kode yang memungkinkan berbagai proses atau thread untuk bekerja bersama tanpa harus menunggu salah satu selesai sebelum yang lainnya dimulai. 
+Dengan menggunakan teknik seperti threads, processes, atau coroutines, concurrent programming menjadi landasan penting untuk meningkatkan efisiensi dan kecepatan eksekusi
+pada sistem modern.[1][2]
 
 #### Dua Model Concurrent programming
 Ada dua model umum untuk Concurrent programming: [1]
@@ -39,16 +43,47 @@ Ada dua model umum untuk Concurrent programming: [1]
 1. Shared Memory: Modul-modul yang berjalan secara bersamaan berinteraksi dengan membaca dan menulis objek yang dibagikan dalam memori.
 2. Message Passing: Modul-modul berinteraksi dengan mengirim pesan melalui saluran komunikasi, di mana pesan yang masuk dikelola dalam antrean.
 
-### Concurrent vs Asynchronous
+### Concurrent vs Asynchronous vs MultiThread vs Parallel
 
 #### Concurrency :
-Concurrency adalah konsep di mana banyak tugas dapat berjalan tumpang tindih atau bersamaan. Di sistem multi-core, beberapa tugas bisa berjalan benar-benar paralel, tetapi pada sistem dengan satu CPU, eksekusi dilakukan secara bergantian dengan cepat menggunakan time-slicing. Ini memungkinkan satu program untuk menangani beberapa tugas sekaligus, seperti menangani beberapa koneksi klien di server web.[4]
+Concurrency adalah konsep di mana banyak tugas dapat berjalan tumpang tindih atau bersamaan. 
+Di sistem multi-core, beberapa tugas bisa berjalan benar-benar paralel, tetapi pada sistem dengan satu CPU, 
+eksekusi dilakukan secara bergantian dengan cepat menggunakan time-slicing. Ini memungkinkan satu program untuk menangani beberapa tugas sekaligus, 
+seperti menangani beberapa koneksi klien di server web.[4]
 
 #### Asynchronus :
-Asynchronus programming berfokus pada penanganan tugas-tugas yang memerlukan operasi I/O, di mana satu tugas dapat menunggu (misalnya saat menunggu data dari jaringan atau disk) tanpa menghentikan seluruh aplikasi. Pada pemrograman sinkron biasa, sebuah thread akan diblokir saat menunggu operasi I/O selesai. Dalam pemrograman asinkron, tugas tidak akan memblokir thread utama, tetapi akan menjalankan tugas lainnya selama menunggu hasil operasi. Ini sering digunakan pada sistem yang banyak berurusan dengan operasi I/O yang lambat.[4]
+Asynchronus programming berfokus pada penanganan tugas-tugas yang memerlukan operasi I/O, 
+di mana satu tugas dapat menunggu (misalnya saat menunggu data dari jaringan atau disk) tanpa menghentikan seluruh aplikasi. 
+Pada pemrograman sinkron biasa, sebuah thread akan diblokir saat menunggu operasi I/O selesai. Dalam pemrograman asinkron, 
+tugas tidak akan memblokir thread utama, tetapi akan menjalankan tugas lainnya selama menunggu hasil operasi. 
+Ini sering digunakan pada sistem yang banyak berurusan dengan operasi I/O yang lambat.[4]
 
-#### Perbedaan Concurrency dengan Asynchronus Programming :
-Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. Di sini, pemrograman biasanya melibatkan sinkronisasi dan manajemen thread agar tidak terjadi konflik data atau masalah seperti race conditions. Sedangkan Asynchronous Programming fokus pada operasi I/O yang lambat, di mana alih-alih memblokir seluruh program saat menunggu hasil dari operasi tersebut, thread dapat melanjutkan tugas lain. Ini membuat pemrograman asinkron lebih efisien dalam menangani operasi I/O daripada pendekatan concurrent yang sinkron.[3][4]
+#### MultiThread :
+Multithreading adalah konsep di mana sebuah proses dibagi menjadi beberapa unit kecil yang disebut thread.
+Thread-thread ini dapat berjalan secara bersamaan, memungkinkan aplikasi untuk melakukan beberapa **tugas** secara bersamaan.
+
+#### Parallel :
+Parallelism adalah konsep di mana beberapa tugas dapat benar-benar berjalan secara bersamaan, biasanya pada sistem multi-core.
+Ini memungkinkan aplikasi untuk memanfaatkan kekuatan pemrosesan dari **beberapa core CPU** secara bersamaan,
+meningkatkan kecepatan eksekusi secara signifikan.
+
+
+#### Perbedaan Concurrency dengan Asynchronus, Multithreading, dan Parallel:
+**Concurrency** berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. 
+Di sini, pemrograman biasanya melibatkan sinkronisasi dan manajemen thread agar tidak terjadi konflik data atau masalah seperti race conditions. 
+Sedangkan Asynchronous Programming fokus pada operasi I/O yang lambat, di mana alih-alih memblokir seluruh program saat menunggu hasil dari operasi tersebut, 
+thread dapat melanjutkan tugas lain. Ini membuat pemrograman asinkron lebih efisien dalam menangani operasi I/O daripada pendekatan concurrent yang sinkron.[3][4]
+Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. Di sini, pemrograman biasanya melibatkan sinkronisasi dan 
+manajemen thread agar tidak terjadi konflik data atau masalah seperti race conditions. Sedangkan Asynchronous Programming fokus pada operasi I/O yang lambat, 
+di mana alih-alih memblokir seluruh program saat menunggu hasil dari operasi tersebut, thread dapat melanjutkan tugas lain. Ini membuat pemrograman asinkron 
+lebih efisien dalam menangani operasi I/O daripada pendekatan concurrent yang sinkron. Sementara itu, multithreading dan parallelism adalah teknik untuk meningkatkan concurrency, 
+tetapi dengan pendekatan yang berbeda: multithreading mengizinkan beberapa thread dalam satu proses, sedangkan parallelism membagi tugas ke dalam beberapa CPU untuk dieksekusi bersamaan.
+
+### Kesimpulan
+**Concurrency, Asynchronous Programming, Multithreading, dan Parallelism adalah teknik untuk mencapai concurrency**, 
+tetapi masing-masing melakukannya dengan cara yang berbeda. Asynchronous programming lebih fokus pada pengelolaan waktu dan penanganan data yang tidak terduga, 
+memungkinkan tugas menunggu tanpa memblokir aplikasi. Sementara itu, multithreading berfokus pada pemanfaatan sumber daya CPU dengan menjalankan beberapa tugas secara bersamaan, 
+sehingga meningkatkan responsivitas dan efisiensi. Parallelism juga bertujuan untuk meningkatkan concurrency dengan membagi tugas ke beberapa core CPU untuk eksekusi simultan, mempercepat waktu pemrosesan.
 
 #### Referensi
 [1] [MIT Concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/).
@@ -75,10 +110,15 @@ Tentu! Berikut adalah informasi mengenai bahasa pemrograman Java, Go (Golang), d
 </p>
 
 #### Sejarah
-Java dikembangkan pada tahun 1990 oleh insinyur Sun, James Gosling sebagai bahasa pemrograman yang  berperan sebagai otak untuk peralatan pintar (TV interaktif, oven serba bisa). Java adalah bahasa pemrograman untuk berbagai tujuan (general purpose), bahasa pemrogramn yang concurrent, berbasis kelas, dan berorientasi objek, yang dirancang secara khusus untuk memiliki sesedikit mungkin ketergantungan dalam penerapannya.[1]
+Java dikembangkan pada tahun 1990 oleh insinyur Sun, James Gosling sebagai bahasa pemrograman yang  berperan sebagai otak untuk peralatan pintar 
+(TV interaktif, oven serba bisa). Java adalah bahasa pemrograman untuk berbagai tujuan (general purpose), bahasa pemrogramn yang concurrent,
+berbasis kelas, dan berorientasi objek, yang dirancang secara khusus untuk memiliki sesedikit 
+mungkin ketergantungan dalam penerapannya.[[1]](https://bpptik.kominfo.go.id/Publikasi/detail/sejarah-java#:~:text=Java%20dikembangkan%20pada%20tahun%201990,interaktif%2C%20oven%20serba%20bisa)
 
 #### Konsep
-**Multithreading** adalah konsep yang sangat kuat di Java yang memungkinkan kita untuk menjalankan beberapa thread secara bersamaan dalam satu proses.Sangat penting untuk mengembangkan aplikasi yang responsif dan efisien, terutama di lingkungan prosesor multi-core saat ini. Multithreading adalah konsep pemrograman yang memungkinkan satu proses untuk menjalankan beberapa thread secara bersamaan.[4]
+**Multithreading** adalah konsep yang sangat kuat di Java yang memungkinkan kita untuk menjalankan beberapa thread secara bersamaan dalam satu proses.
+Sangat penting untuk mengembangkan aplikasi yang responsif dan efisien, terutama di lingkungan prosesor multi-core saat ini. 
+Multithreading adalah konsep pemrograman yang memungkinkan satu proses untuk menjalankan beberapa thread secara bersamaan.[4]
 
 #### Fitur
 Java menyediakan seperangkat utilitas konkurensi yang kuat yang menyederhanakan pengembangan aplikasi multithreaded:[4]
@@ -96,10 +136,14 @@ Java menyediakan seperangkat utilitas konkurensi yang kuat yang menyederhanakan 
 </p>
 
 #### Sejarah
-Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali dikembangkan di Google sejak 2007 oleh tiga orang yakni, Ken Thompson, Rob Pike, dan Robert Griesemer. Kemudian dirilis ke publik pada 2009 sebagai bahasa program open source. Bahasa program Go didasarkan pada Python, Java dan C++..[2]
+Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali dikembangkan di 
+Google sejak 2007 oleh tiga orang yakni, Ken Thompson, Rob Pike, dan Robert Griesemer. Kemudian 
+dirilis ke publik pada 2009 sebagai bahasa program open source. Bahasa program Go didasarkan pada Python, Java dan C++..[2]
 
 #### Konsep
-**Goroutines dan Channels** adalah dua konsep penting dalam pemrograman konkuren di Golang. Channel digunakan untuk berkomunikasi antar Goroutines, dan menyediakan cara untuk menyinkronkan eksekusi beberapa Goroutines. Channel dibuat menggunakan fungsi 'make', dan dapat digunakan untuk mengirim dan menerima data antar Goroutine..[6]
+**Goroutines dan Channels** adalah dua konsep penting dalam pemrograman konkuren di Golang. 
+Channel digunakan untuk berkomunikasi antar Goroutines, dan menyediakan cara untuk menyinkronkan eksekusi beberapa Goroutines. 
+Channel dibuat menggunakan fungsi 'make', dan dapat digunakan untuk mengirim dan menerima data antar Goroutine..[6]
 
 #### Fitur
 
@@ -121,7 +165,9 @@ Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali
 
 ### 3. Erlang
 #### Sejarah
-Erlang muncul dari industri telekomunikasi pada tahun 1986 di Ericsson, sebuah perusahaan Swedia. Menghadapi tugas monumental untuk menangani jutaan panggilan telepon secara bersamaan, para pengembang menyadari perlunya bahasa dan runtime yang mampu menskalakan sistem konkuren yang begitu besar secara efisien..[3]
+Erlang muncul dari industri telekomunikasi pada tahun 1986 di Ericsson, sebuah perusahaan Swedia. 
+Menghadapi tugas monumental untuk menangani jutaan panggilan telepon secara bersamaan, 
+para pengembang menyadari perlunya bahasa dan runtime yang mampu menskalakan sistem konkuren yang begitu besar secara efisien..[3]
 
 #### Konsep
 
@@ -259,7 +305,7 @@ Jika kedua goroutine ini menjalankan ``increment()`` secara bersamaan, bisa terj
 
 Untuk mekanisme sinkronisasi, Go menyediakan sync.Mutex yang bisa dimanfaatkan untuk keperluan **lock** dan unlock data. Mutex melakukan pengubahan level akses sebuah data menjadi eksklusif, menjadikan data tersebut hanya dapat dikonsumsi (read / write) oleh satu buah goroutine saja. [[2]](#referensi-3)
 
-```golang
+```go
 var mutex sync.Mutex
 var counter int
 
@@ -271,6 +317,8 @@ func increment() {
 ```
 
 #### Pranala Menarik
+
+- [Eksperimen Race Condition](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/race_condition)
 
 - [2012 Twitter duplicate tweets issue](https://www.socialmediatoday.com/news/twitter-implements-new-rules-to-limit-the-reach-of-duplicated-tweets/623531)
     <details>
@@ -287,7 +335,7 @@ func increment() {
 
     </details>
 
-- [Eksperimen Jelang](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/race_condition)
+
 
 #### Referensi
 [1] [Stack Overflow - What is a race condition?](https://stackoverflow.com/questions/34510/what-is-a-race-condition)
@@ -297,6 +345,16 @@ func increment() {
 ### Deadlock
 
 ---
+<table> 
+  <tr> 
+    <td><img src="./image/deadlock1.png" style="width:100%; height:auto;" /></td> 
+    <td><img src="./image/deadlock2.png" style="width:100%; height:auto;" /></td> 
+  </tr> 
+  <tr> 
+    <td><img src="./image/deadlock3.png" style="width:100%; height:auto;" /></td> 
+    <td><img src="./image/deadlock4.png" style="width:100%; height:auto;" /></td> 
+  </tr> 
+</table>
 
 __Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapat melanjutkan eksekusinya karena saling menunggu satu sama lain untuk melepaskan sumber daya yang sedang digunakan. Dalam konteks sistem operasi atau pemrograman multi-threaded, deadlock menjadi masalah serius karena dapat menyebabkan sistem atau aplikasi menjadi tidak responsif.
 
