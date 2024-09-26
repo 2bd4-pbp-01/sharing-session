@@ -64,12 +64,36 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ## Implementasi pada Bahasa Pemrograman
 
 ### Bahasa Pemrograman yang Mendukung Concurrent
+Bahasa pemrograman yang mendukung concurrent programming sangat banyak, tetapi kelompok kami coba membahas bahasa pemrograman yang paling baik untuk mendukung concurrent programming. Menentukan bahasa “terbaik” untuk pemrograman konkuren bergantung pada berbagai faktor, termasuk domain aplikasi tertentu, infrastruktur, keahlian pengembang, dan persyaratan proyek. Namun, beberapa bahasa telah menarik perhatian karena fitur dan kemampuan pemrograman konkuren mereka. [1]
 
-#### Golang
+#### 1. Java
+Java dirancang oleh James Gosling di Sun Microsystems (sekarang milik Oracle) pada tahun 1995, dan merupakan salah satu bahasa pemrograman yang paling populer di dunia. Salah satu kekuatan utama Java adalah kemampuannya menangani multithreading dengan baik, membuatnya ideal untuk concurrent programming dalam skala besar.[3] Dengan dukungannya yang kuat untuk konkurensi berbasis thread, Java adalah salah satu bahasa yang paling populer untuk pemrograman konkuren.[2] Java adalah bahasa populer yang sering digunakan di berbagai industri, terutama di perusahaan besar. Java memiliki dukungan kuat untuk multithreading dan concurrent programming melalui berbagai API bawaan yang powerful.[3]
 
-#### Java
+__USE CASE__
 
-#### Erlang
+Perbankan, E-commerce, dan Aplikasi Enterprise yang memerlukan sistem backend kuat sering kali menggunakan Java untuk concurrent programming. Contoh: Netflix menggunakan Java untuk sebagian besar sistemnya yang berfokus pada manajemen beban kerja concurrent secara efisien.[3]
+
+#### 2. Golang
+Go atau Golang diciptakan oleh Google pada tahun 2009, dengan tujuan utama untuk menyederhanakan concurrency dan membuat pemrograman berskala besar lebih mudah dikelola. Bahasa ini terkenal dengan kecepatan eksekusi, kesederhanaan, dan dukungan concurrent programming yang kuat.[3] Go (Golang) dirancang dengan mempertimbangkan konkurensi dan memiliki dukungan asli untuk pemrograman konkuren ringan menggunakan “goroutines” dan saluran. [2] Go adalah bahasa pemrograman yang dirancang oleh Google untuk menangani concurrent programming secara efisien dan mudah digunakan. Go menonjol karena kesederhanaannya dalam mengelola concurrent tasks dibandingkan dengan bahasa lain.[3]
+
+__USE CASE__
+
+Go digunakan oleh banyak perusahaan besar seperti Google, Uber, Dropbox, dan Docker untuk menangani concurrent programming dalam layanan web, microservices, dan aplikasi cloud-native. Contoh: Kubernetes, salah satu platform container orchestration terkemuka, dibangun menggunakan Go.
+
+#### 3. Erlang
+Dibuat oleh Ericsson pada akhir 1980-an, Erlang dirancang untuk menangani sistem telekomunikasi yang membutuhkan high availability, scalability, dan fault tolerance.[3] Bahasa pemrograman fungsional ini dirancang khusus untuk konkurensi, toleransi kesalahan, dan distribusi, Erlang terkenal karena penggunaannya dalam infrastruktur telekomunikasi dan sistem server yang sangat konkuren.[2] Erlang dirancang khusus untuk concurrent programming sejak awal pembuatannya. Bahasa ini dikembangkan oleh perusahaan telekomunikasi Ericsson untuk sistem yang membutuhkan keandalan tinggi dan mampu menangani banyak proses secara bersamaan.[3] 
+
+__USE CASE__
+
+WhatsApp menggunakan Erlang untuk menangani jutaan pengguna dengan kinerja yang sangat tinggi. Sistem telekomunikasi, game online, dan perangkat lunak mission-critical yang membutuhkan keandalan juga memanfaatkan Erlang.[3]
+
+#### Referensi
+[1] [Bilginc](https://bilginc.com/en/blog/concurrent-programming-languages-5908/#:~:text=Go%20(Golang)%3A%20Developed%20by,and%20provides%20robust%20concurrency%20mechanisms)
+
+[2] [StudySmarter](https://www.studysmarter.co.uk/explanations/computer-science/computer-programming/concurrent-programming/)
+
+[3] [ChatGPT](https://chatgpt.com/share/66f52e95-5f00-8002-b2c7-d029cb98ac9e)
+
 
 ### Pros/Cons setiap Bahasa Pemrograman
 
