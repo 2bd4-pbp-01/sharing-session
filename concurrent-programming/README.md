@@ -233,6 +233,8 @@ func increment() {
 
     </details>
 
+- [Eksperimen Jelang](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/race_condition)
+
 #### Referensi
 [1] [Stack Overflow - What is a race condition?](https://stackoverflow.com/questions/34510/what-is-a-race-condition)
 
@@ -241,3 +243,9 @@ func increment() {
 ### Deadlock
 
 ---
+
+__Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapat melanjutkan eksekusinya karena saling menunggu satu sama lain untuk melepaskan sumber daya yang sedang digunakan. Dalam konteks sistem operasi atau pemrograman multi-threaded, deadlock menjadi masalah serius karena dapat menyebabkan sistem atau aplikasi menjadi tidak responsif.
+
+[ahmog sigma experiment](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/deadlock)
+
+
