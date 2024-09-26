@@ -180,6 +180,9 @@ plusOnePoly a = a + 1
 
 #### 1. Self-Defined Modules
 
+Self-Defined module adalah modul atau library yang dibuat oleh
+pengembang / developer itu sendiri.
+
 ```hs
 module Geometry
 ( sphereVolume
@@ -197,9 +200,10 @@ sphereArea radius = 4 * pi * (radius ^ 2)
 
 Standary library merupakan library yang disediakan oleh Haskell secara default.
 Fungsinya memberikan utility untuk hal umum seperti interaksi dengan Input/output
-(IO). Klik [disini](https://hackage.haskell.org/package/base) untuk melihat langsung
-daftar standary library yang disediakan oleh Haskell. Berikut sintaks untuk melakukan
-import modul dalam kode Haskell
+(IO). [Dokumentasi resmi Haskell](https://hackage.haskell.org/package/base) menyediakan
+daftar standary library yang ada dan dapat digunakan.
+
+Berikut sintaks untuk melakukan import modul dalam kode Haskell
 
 ```hs
 import <Nama.Modul>
@@ -385,9 +389,18 @@ Konsep dasar yang digunakan untuk menangani komputasi yang mencakup side effect 
 
 Monad dalam Haskell adalah type class dengan tiga komponen utama:
 
-- **return (atau pure dalam konteks applicative)**: Wrapping nilai dalam konteks monad.
+- **return (pure dalam konteks applicative)**: Wrapping nilai dalam konteks monad.
+
 - **`>>=` (bind)**: Merantai operasi manjadi satu, meneruskan hasil dari satu operasi ke operasi berikutnya.
+
 - **Hukum monad**: Tiga hukum yang memastikan bahwa monad berperilaku secara konsisten.
+
+  - Left identity: `return a` >>= `h` ≡ `h a`
+  - Right identity: `return a` >>= `h` ≡ `h a`
+  - Associativity: `m >>= g` >>= `h` ≡ `m >>= (\x -> g x >>= h)`
+
+  `p ≡ q` berarti variabel `p` dapat diganti `q` atau sebaliknya, dan perilaku
+  dari program tidak akan berubah karena `p` dan `q` ekuivalen.
 
 <https://wiki.haskell.org/All_About_Monads>
 
@@ -463,10 +476,10 @@ Toolchain sendiri meliputi:
    dan memungkinkan untuk berjalan di platform / sistem operasi yang berbeda meliputi
    Linux, macOS, Windows, dan lainnya.
 
-   > [!NOTE]
-   > Selain digunakan untuk melakukan kompilasi pada program Haskell, GHC juga
-   > mendukung extensions, library, dan beberapa parameter untuk melakukan
-   > optimisasi pada saat proses kompilasi program.
+> [!NOTE]
+> Selain digunakan untuk melakukan kompilasi pada program Haskell, GHC juga
+> mendukung extensions, library, dan beberapa parameter untuk melakukan
+> optimisasi pada saat proses kompilasi program.
 
 2. Language Server
 
@@ -513,6 +526,7 @@ Beberapa library eksternal yang digunakan yaitu
   lebih interaktif.
 
 #### Why?
+
 Haskell adalah Bahasa paling dekat dengan konsep-konsep matematis. Grafik 2d banyak menggunakan operasi geometri, transformasi, dan fungsi matematika lain sehingga penulisan persamaan dan fungsi matematika untuk memanipulasi bangun datar sangat didukung dengan Haskell. Setiap gambar dan trasformasi merupakan hasil dari sebuah fungsi sehingga jika dilakukan manipulasi state sebelumnya tidak akan mempengaruhi gambar baru yang tercipta. Penggunaan Haskell juga lebih mudah karena menggunakan pendekatan deklaratif yang fokusnya lebih ke apa yang ingin digambar dan bukan bagaimana menggambarnya.
 
 ---
