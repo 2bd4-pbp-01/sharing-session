@@ -112,28 +112,28 @@ x :: Int
 x = 3
 ```
 
-1. Basic Data Types
+#### 1. Basic Data Types
 
-- Int = Menampung value angka dan dipastikan bisa menampung value paling tidak ±2^29 tapi sizenya bergantung pada arsitektur mesin yang dipakai (mesin 64-bit bisa sampai ±2^63)
-- Integer = Menampung value angka dan kapasitasnya dibatasi memory mesin yang dipakai
-- Float = Single precision floating-point numbers, jarang dipakai karena kurang presisi
-- Double = Double-precision floating-point numbers, lebih sering dipakai untuk angka berdesimal
-- Boolean = Berisi logical value 'true' dan 'false'
-- Char = Menampung satu karakter unicode
-
-<https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
-
-2. Composite Data Types
-
-- List = Kumpulan terurut element dengan satu tipe data yang sama
-- String = List of Char
-- Tuple = Kumpulan terurut element bertipe apapun
+- **Int**: Menampung value angka dan dipastikan bisa menampung value paling tidak ±2^29 tapi sizenya bergantung pada arsitektur mesin yang dipakai (mesin 64-bit bisa sampai ±2^63)
+- **Integer**: Menampung value angka dan kapasitasnya dibatasi memory mesin yang dipakai
+- **Float**: Single precision floating-point numbers, jarang dipakai karena kurang presisi
+- **Double**: Double-precision floating-point numbers, lebih sering dipakai untuk angka berdesimal
+- **Boolean**: Berisi logical value 'true' dan 'false'
+- **Char**: Menampung satu karakter unicode
 
 <https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
 
-3. Algebraic Data Types
+#### 2. Composite Data Types
 
-- Enumeration =
+- **List**: Kumpulan terurut element dengan satu tipe data yang sama
+- **String**: List of Char
+- **Tuple**: Kumpulan terurut element bertipe apapun
+
+<https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
+
+#### 3. Algebraic Data Types
+
+Enumeration
 
 ```hs
 data Thing = Shoe
@@ -146,8 +146,9 @@ data Thing = Shoe
 
 <https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/2-algebraic-data-types>
 
-4. Type Classes  
-   Type Class adalah serangkaian method yang digunakan bersama oleh beberapa type, konsepnya mirip dengan generic programming.
+#### 4. Type Classes
+
+Type Class adalah serangkaian method yang digunakan bersama oleh beberapa type, konsepnya mirip dengan generic programming.
 
 Contoh typeclass:
 
@@ -162,7 +163,7 @@ class Num a where
   fromInteger :: Integer -> a
 ```
 
-Agar suatu tipe termasuk dalam type class Num, tipe tersebut perlu mengimplementasikan metode-metodenye dan metode tersebut hanya bisa dipakai pada tipe yang memiliki instance Num. Jika metode tersebut mengambil anggota diluar typeclassnya code tidak akan tercompile.
+Agar suatu tipe termasuk dalam type class Num, tipe tersebut perlu mengimplementasikan metode-metodenye dan metode tersebut hanya bisa dipakai pada tipe yang memiliki instance Num. Jika metode tersebut mengambil anggota diluar typeclassnya code tidak akan di-compile.
 
 Penggunaan
 
@@ -177,7 +178,7 @@ plusOnePoly a = a + 1
 
 ### Modularitas
 
-1. Self-Defined Moduls
+#### 1. Self-Defined Modules
 
 ```hs
 module Geometry
@@ -192,32 +193,53 @@ sphereArea :: Float -> Float
 sphereArea radius = 4 * pi * (radius ^ 2)
 ```
 
-2. Standard Library  
-   Syntax untuk mengimpor modul dalam skrip Haskell adalah
+#### 2. Standard Library
+
+Standary library merupakan library yang disediakan oleh Haskell secara default.
+Fungsinya memberikan utility untuk hal umum seperti interaksi dengan Input/output
+(IO). Klik [disini](https://hackage.haskell.org/package/base) untuk melihat langsung
+daftar standary library yang disediakan oleh Haskell. Berikut sintaks untuk melakukan
+import modul dalam kode Haskell
 
 ```hs
-import <nama modul>
+import <Nama.Modul>
+```
 
-contoh:
+Contoh:
+
+```hs
 import Data.List
 ```
 
-Dan cara pemakaiannya mirip dengan memanggil modul biasa seperti contoh berikut dalam library data list:
+Cara pemakaiannya mirip dengan memanggil modul pada umumnya. seperti contoh berikut dalam library data list:
 
 ```hs
 numUniques :: (Eq a) => [a] -> Int
 numUniques = length . nub
 ```
 
-3. External Library / Dependecies
-   Untuk mengimport external shared library kita perlu menggunakan Cabal dan cara meniginstall dan menggunakannya adalah sebagai berikut:
+#### 3. External Library / Dependencies
+
+External atau shared library / dependencies merupakan library yang tersedia
+secara online dan umumnya bisa digunakan oleh siapapun. External library
+tidak dibuat oleh mengembang yang mengelola Haskell melainkan, dapat dibuat
+oleh siapapun. Haskell menyediakan repositori bernama [Hackage](https://hackage.haskell.org/)
+untuk mencari external library yang dapat digunakan.
+
+Untuk melakukan instalasi dapat menggunakan [package manager atau build tools](#haskell-development-environments)
+seperti [Cabal](https://www.haskell.org/cabal/) atau [Stack](https://docs.haskellstack.org/en/stable/).
+
+Berikut contoh melakukan instalasi dengan [Cabal](https://www.haskell.org/cabal/).
+
+```sh
+cabal install cabal-install
+cabal --version # melakukan verifikasi instalasi
+```
+
+Setelah melakukan instalasi, dapat melakukan import external shared library
+seperti melakukan import pada libary pada umumnya.
 
 ```hs
-Install:
-cabal install cabal-install
-cabal --version
-
-Import library:
 import <nama.External.Library>
 ```
 
@@ -235,9 +257,12 @@ Haskell dianggap kuat karena risiko kesalahannya rendah. Error safety pada waktu
 
 ### Error dan Exception Handling
 
-1. Exception  
-   Unexpected code path, biasanya disebabkan oleh kesalahan IO seperti file handling, network failures, atau system-level issues lain.  
-   Syntax yang digunakan:
+#### 1. Exception
+
+Unexpected code path, biasanya disebabkan oleh kesalahan IO seperti file handling,
+network failures atau system-level issues lain.
+
+Berikut contohnya:
 
 ```hs
 import Control.Exception (Exception, throw, try, SomeException)
@@ -259,12 +284,13 @@ main = do
     Right _  -> putStrLn "Everything went fine"
 ```
 
-2. Pure Code  
-   Method ini harus dihindari dalam kebanyakan kasus karena penggunaan error akan membuat program crash jika terjadi situasi yang tidak valid.  
-   Method ini dapat digunakan dalam skenario sederhana ketika kegagalan tidak dapat dihindari atau logika program sudah rusak.  
-   Alternatif yang lebih aman seperti Maybe atau Either harus lebih dipilih untuk mencegah terjadinya crash.
+#### 2. Pure Code
 
-Syntax yang digunakan:
+Method ini harus dihindari dalam kebanyakan kasus karena penggunaan error akan membuat program crash jika terjadi situasi yang tidak valid.
+Method ini dapat digunakan dalam skenario sederhana ketika kegagalan tidak dapat dihindari atau logika program sudah rusak.
+Alternatif yang lebih aman seperti Maybe atau Either harus lebih dipilih untuk mencegah terjadinya crash.
+
+Berikut contohnya:
 
 ```hs
 -- Using error in pure code (not recommended for safe programs)
@@ -273,10 +299,11 @@ headSafe [] = error "empty list"
 headSafe (x:_) = x
 ```
 
-3. Either Type  
-   Gunakan Either ketika kesalahan expected dan merupakan bagian dari regular program logic. Either memungkinkan pengembalian error beserta hasil yang berhasil secara terstruktur. Hal ini umum terjadi dalam penguraian, validasi, atau perhitungan dimana kesalahan bersifat biasa dan tidak menunjukkan logika yang rusak, hanya input yang salah.
+#### 3. Either Type
 
-Syntax yang digunakan:
+Gunakan Either ketika kesalahan expected dan merupakan bagian dari regular program logic. Either memungkinkan pengembalian error beserta hasil yang berhasil secara terstruktur. Hal ini umum terjadi dalam penguraian, validasi, atau perhitungan dimana kesalahan bersifat biasa dan tidak menunjukkan logika yang rusak, hanya input yang salah.
+
+Berikut contohnya:
 
 ```hs
 -- Define an error type
@@ -298,10 +325,11 @@ main = do
     Right value  -> print ("Parsed value: " ++ show value)
 ```
 
-4. Missing Value dengan Maybe  
-   Gunakan Maybe saat tidak adanya nilai bukan menunjukan kesalahan tetapi kondisi normal. Maybe berguna ketika expected suatu value mungkin tidak ada, tetapi tidak perlu menjelaskan mengapa value itu tidak ada. Contohnya seperti pada search engine.
+#### 4. Missing Value dengan Maybe
 
-Syntax yang digunakan:
+Gunakan Maybe saat tidak adanya nilai bukan menunjukan kesalahan tetapi kondisi normal. Maybe berguna ketika expected suatu value mungkin tidak ada, tetapi tidak perlu menjelaskan mengapa value itu tidak ada. Contohnya seperti pada search engine.
+
+Berikut contohnya:
 
 ```hs
 -- Lookup function returning Maybe
@@ -357,9 +385,9 @@ Konsep dasar yang digunakan untuk menangani komputasi yang mencakup side effect 
 
 Monad dalam Haskell adalah type class dengan tiga komponen utama:
 
-- return (atau pure dalam konteks Applicative): Wrapping nilai dalam konteks monad.
-- (>>=) (bind): Merantai operasi manjadi satu, meneruskan hasil dari satu operasi ke operasi berikutnya.
-- Hukum monad: Tiga hukum yang memastikan bahwa monad berperilaku secara konsisten.
+- **return (atau pure dalam konteks applicative)**: Wrapping nilai dalam konteks monad.
+- **`>>=` (bind)**: Merantai operasi manjadi satu, meneruskan hasil dari satu operasi ke operasi berikutnya.
+- **Hukum monad**: Tiga hukum yang memastikan bahwa monad berperilaku secara konsisten.
 
 <https://wiki.haskell.org/All_About_Monads>
 
