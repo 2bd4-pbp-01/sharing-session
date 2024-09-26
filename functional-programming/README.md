@@ -1,5 +1,11 @@
 # Functional Programming
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/Haskell/haskell.png" alt="haskell kawaii logo" />
+  </br>
+  <sub>Haskell logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
+
 #### Daftar Isi
 
 - [Functional Programming](#functional)
