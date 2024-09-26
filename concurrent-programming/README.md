@@ -175,10 +175,24 @@ Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness
 
 ### Race Condition
 
-Race condition adalah masalah umum dalam pemrograman concurrent yang terjadi ketika hasil akhir dari program bergantung pada urutan atau timing dari eksekusi thread. Kondisi ini dapat menyebabkan perilaku tak terduga, yang sering kali sulit untuk di-debug.
-![image](https://uploads.sitepoint.com/wp-content/uploads/2017/02/1486567898race-condition.jpg)
-Race condition terjadi ketika dua atau lebih thread atau proses secara bersamaan mengakses dan memodifikasi shared resource tanpa adanya mekanisme sinkronisasi yang memadai. Hal ini menyebabkan urutan eksekusi yang tidak terprediksi, yang dapat menyebabkan bug atau hasil yang tidak diinginkan.
+---
 
+__Race condition__ adalah masalah umum dalam pemrograman concurrent yang terjadi ketika hasil akhir dari program bergantung pada urutan atau timing dari eksekusi thread. Kondisi ini dapat menyebabkan _behavior_ tak terduga, yang sering kali sulit untuk di-debug.
+![image](https://uploads.sitepoint.com/wp-content/uploads/2017/02/1486567898race-condition.jpg)
+__Race condition__ terjadi ketika dua atau lebih thread dapat mengakses data bersama dan mencoba mengubahnya pada saat yang sama. Karena algoritma _thread scheduling_ dapat beralih di antara thread kapan saja, Anda tidak tahu urutan di mana thread akan mencoba mengakses data bersama. Oleh karena itu, hasil perubahan data bergantung pada algoritma penjadwalan thread, yaitu kedua thread berlomba (_racing_) untuk mengakses/mengubah data. [1](#referensi-3)
+
+#### Pranala Menarik
+
+- [(News) Twitter duplicate tweets issue](https://www.socialmediatoday.com/news/twitter-implements-new-rules-to-limit-the-reach-of-duplicated-tweets/623531)
+    <details>
+      <summary>TLDR</summary>
+
+  > Akibat _race condition_, Twitter pernah mengalami masalah _duplicate tweets_ pada 2012. Ketika banyak pengguna mengirim tweet secara bersamaan, sistem tidak bisa memprosesnya dengan benar karena kurangnya mekanisme penguncian (_locking_). Hal ini menyebabkan tweet yang sama muncul berulang kali. Untuk mengatasi masalah ini, Twitter menerapkan aturan baru yang membatasi jumlah tweet duplikat.
+
+    </details>
+
+#### Referensi
+[1] [Stack Overflow - What is a race condition?](https://stackoverflow.com/questions/34510/what-is-a-race-condition)
 
 ### Deadlock
 
