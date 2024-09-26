@@ -20,7 +20,7 @@
 ---
 
 ## Paradigma Concurrent
-
+![Diagram Interaktif](./image/Paradigma%20ConcurrentMM(1).png)
 ### Overview
 
 #### Concurrency
@@ -62,7 +62,7 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ---
 
 ## Implementasi pada Bahasa Pemrograman
-
+![Diagram Interaktif](./image/Implementasi%20pada%20Bahasa%20PemogramanMM(1).png)
 ### Bahasa Pemrograman yang Mendukung Concurrent
 Bahasa pemrograman yang mendukung concurrent programming sangat banyak, tetapi kelompok kami coba membahas bahasa pemrograman yang paling baik untuk mendukung concurrent programming. Menentukan bahasa “terbaik” untuk pemrograman konkuren bergantung pada berbagai faktor, termasuk domain aplikasi tertentu, infrastruktur, keahlian pengembang, dan persyaratan proyek. Namun, beberapa bahasa telah menarik perhatian karena fitur dan kemampuan pemrograman konkuren mereka. [1]
 
@@ -100,16 +100,14 @@ WhatsApp menggunakan Erlang untuk menangani jutaan pengguna dengan kinerja yang 
 ## Golang
 
 ## Kelebihan Golang:
-1. Dukungan Concurrency yang Kuat: Goroutines dan channels memudahkan pengelolaan banyak tugas sekaligus, ideal untuk aplikasi server dan microservices.[1]​[2]
-2. Garbage Collector yang Efisien: Mengelola memori secara otomatis, mengurangi beban pengembang.[1]​[2]
-3. Sintaks yang Sederhana: Mudah dipahami dan dipelajari, dengan dokumentasi yang komprehensif.[1]​[2]
-4. Skalabilitas Tinggi: Bekerja baik pada berbagai inti CPU, cocok untuk infrastruktur cloud dan sistem terdistribusi.[3]​[2]
-5. Ekosistem yang Mapan: Pustaka standar yang kaya dan banyak pustaka pihak ketiga.[3]​[2]
+1. Goroutines yang Ringan: Golang memungkinkan pembuatan ribuan goroutines dengan overhead memori yang sangat kecil, membuat aplikasi lebih scalable dan efisien.[2][3]
+2. Channels: Mempermudah komunikasi antar goroutines, mengurangi risiko race conditions dan deadlocks.[2][3]
+3. Concurrency Sederhana: Menggunakan CSP (Communicating Sequential Processes), sehingga penulisan kode lebih mudah dan bersih​.[2]
 
 ## Kekurangan Golang:
-1. Kurangnya Pustaka untuk Aplikasi Monolitik: Kurang memiliki kerangka kerja matang dibandingkan Java atau C#.[3]​[2]
-2. Pengelolaan Kesalahan yang Verbose: Penanganan kesalahan dapat membuat kode terlihat rumit.[3]​[2]
-3. Waktu Kompilasi yang Lama: Meskipun lebih cepat dari C++, proyek besar dapat mengalami waktu kompilasi yang lama.[3]​[2]
+1. Kurangnya Generik: Tidak mendukung generik, membuat kode lebih sulit diulang untuk tipe data yang berbeda.[3]
+2. Dukungan Pustaka Terbatas: Beberapa pustaka eksternal untuk aplikasi kompleks kurang memadai.[3]
+3. Manajemen Dependensi yang Rumit: Proses pengelolaan paket di Go bisa membingungkan bagi pengembang baru.[3]
 
 
 ## Java
@@ -163,10 +161,9 @@ Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness
 
 [1] [Ruangbacaku](https://www.ruangbacaku.com/detail-artikel/apa-itu-golang-kelebihan-dan-alasan-mengapa-harus-mempelajarinya).
 
+[2] [Futurice](https://www.futurice.com/blog/gocurrency).
 
-[2] [Logique](https://www.logique.co.id/blog/2019/08/19/bahasa-pemrograman-golang/).
-
-[3] [Silicon Review](https://thesiliconreview.com/2024/08/go-in-2024-an-in-depth-analysis-and-comparison-to-other-languages).
+[3] [Mobcoder](https://blog.mobcoder.com/golang-pros-and-cons/).
 
 [4] [ChatGPT(Java)](https://chatgpt.com/share/66f52e09-0f34-8010-906b-9aead7128468)
 
