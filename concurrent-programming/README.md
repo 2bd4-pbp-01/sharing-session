@@ -64,36 +64,90 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ## Implementasi pada Bahasa Pemrograman
 ![Diagram Interaktif](./image/Implementasi%20pada%20Bahasa%20PemogramanMM(1).png)
 ### Bahasa Pemrograman yang Mendukung Concurrent
-Bahasa pemrograman yang mendukung concurrent programming sangat banyak, tetapi kelompok kami coba membahas bahasa pemrograman yang paling baik untuk mendukung concurrent programming. Menentukan bahasa “terbaik” untuk pemrograman konkuren bergantung pada berbagai faktor, termasuk domain aplikasi tertentu, infrastruktur, keahlian pengembang, dan persyaratan proyek. Namun, beberapa bahasa telah menarik perhatian karena fitur dan kemampuan pemrograman konkuren mereka. [1]
+Tentu! Berikut adalah informasi mengenai bahasa pemrograman Java, Go (Golang), dan Erlang yang mendukung concurrent programming:
 
-#### 1. Java
-Java dirancang oleh James Gosling di Sun Microsystems (sekarang milik Oracle) pada tahun 1995, dan merupakan salah satu bahasa pemrograman yang paling populer di dunia. Salah satu kekuatan utama Java adalah kemampuannya menangani multithreading dengan baik, membuatnya ideal untuk concurrent programming dalam skala besar.[3] Dengan dukungannya yang kuat untuk konkurensi berbasis thread, Java adalah salah satu bahasa yang paling populer untuk pemrograman konkuren.[2] Java adalah bahasa populer yang sering digunakan di berbagai industri, terutama di perusahaan besar. Java memiliki dukungan kuat untuk multithreading dan concurrent programming melalui berbagai API bawaan yang powerful.[3]
+### 1. Java
 
-__USE CASE__
+<p align="center">
+  <img alt="Java Kawaii Logo" src="https://pbs.twimg.com/media/GLtFpDsbwAAtKmy?format=jpg&name=large" width="580" >
+  </br>
+  <sub>Java logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
 
-Perbankan, E-commerce, dan Aplikasi Enterprise yang memerlukan sistem backend kuat sering kali menggunakan Java untuk concurrent programming. Contoh: Netflix menggunakan Java untuk sebagian besar sistemnya yang berfokus pada manajemen beban kerja concurrent secara efisien.[3]
+#### Sejarah
+Java dikembangkan pada tahun 1990 oleh insinyur Sun, James Gosling sebagai bahasa pemrograman yang  berperan sebagai otak untuk peralatan pintar (TV interaktif, oven serba bisa). Java adalah bahasa pemrograman untuk berbagai tujuan (general purpose), bahasa pemrogramn yang concurrent, berbasis kelas, dan berorientasi objek, yang dirancang secara khusus untuk memiliki sesedikit mungkin ketergantungan dalam penerapannya.[1]
 
-#### 2. Golang
-Go atau Golang diciptakan oleh Google pada tahun 2009, dengan tujuan utama untuk menyederhanakan concurrency dan membuat pemrograman berskala besar lebih mudah dikelola. Bahasa ini terkenal dengan kecepatan eksekusi, kesederhanaan, dan dukungan concurrent programming yang kuat.[3] Go (Golang) dirancang dengan mempertimbangkan konkurensi dan memiliki dukungan asli untuk pemrograman konkuren ringan menggunakan “goroutines” dan saluran. [2] Go adalah bahasa pemrograman yang dirancang oleh Google untuk menangani concurrent programming secara efisien dan mudah digunakan. Go menonjol karena kesederhanaannya dalam mengelola concurrent tasks dibandingkan dengan bahasa lain.[3]
+#### Konsep
+**Multithreading** adalah konsep yang sangat kuat di Java yang memungkinkan kita untuk menjalankan beberapa thread secara bersamaan dalam satu proses.Sangat penting untuk mengembangkan aplikasi yang responsif dan efisien, terutama di lingkungan prosesor multi-core saat ini. Multithreading adalah konsep pemrograman yang memungkinkan satu proses untuk menjalankan beberapa thread secara bersamaan.[4]
 
-__USE CASE__
+#### Fitur
+Java menyediakan seperangkat utilitas konkurensi yang kuat yang menyederhanakan pengembangan aplikasi multithreaded:[4]
 
-Go digunakan oleh banyak perusahaan besar seperti Google, Uber, Dropbox, dan Docker untuk menangani concurrent programming dalam layanan web, microservices, dan aplikasi cloud-native. Contoh: Kubernetes, salah satu platform container orchestration terkemuka, dibangun menggunakan Go.
+1. **The Executor Framework:** Lapisan abstraksi untuk mengelola pelaksanaan tugas secara asinkron dalam lingkungan multithreaded.[4]
+2. **Thread Pools:** Mekanisme untuk mengelola dan menggunakan kembali sejumlah thread untuk menjalankan tugas.[4]
+3. **Callable dan Future:**  Callable memungkinkan menjalankan tugas asinkron yang dapat mengembalikan hasil dan menangani pengecualian. Memungkinkan pengelolaan dan pengambilan hasil dari tugas asinkron, dengan opsi untuk memeriksa status, menunggu hasil, atau membatalkan tugas. [5]
 
-#### 3. Erlang
-Dibuat oleh Ericsson pada akhir 1980-an, Erlang dirancang untuk menangani sistem telekomunikasi yang membutuhkan high availability, scalability, dan fault tolerance.[3] Bahasa pemrograman fungsional ini dirancang khusus untuk konkurensi, toleransi kesalahan, dan distribusi, Erlang terkenal karena penggunaannya dalam infrastruktur telekomunikasi dan sistem server yang sangat konkuren.[2] Erlang dirancang khusus untuk concurrent programming sejak awal pembuatannya. Bahasa ini dikembangkan oleh perusahaan telekomunikasi Ericsson untuk sistem yang membutuhkan keandalan tinggi dan mampu menangani banyak proses secara bersamaan.[3] 
+### 2. Go (Golang)
 
-__USE CASE__
+<p align="center">
+  <img alt="Golang Kawaii Logo" src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/Go%20Lang/Golang.png" width="580" >
+  </br>
+  <sub>Golang logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
 
-WhatsApp menggunakan Erlang untuk menangani jutaan pengguna dengan kinerja yang sangat tinggi. Sistem telekomunikasi, game online, dan perangkat lunak mission-critical yang membutuhkan keandalan juga memanfaatkan Erlang.[3]
+#### Sejarah
+Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali dikembangkan di Google sejak 2007 oleh tiga orang yakni, Ken Thompson, Rob Pike, dan Robert Griesemer. Kemudian dirilis ke publik pada 2009 sebagai bahasa program open source. Bahasa program Go didasarkan pada Python, Java dan C++..[2]
+
+#### Konsep
+**Goroutines dan Channels** adalah dua konsep penting dalam pemrograman konkuren di Golang. Channel digunakan untuk berkomunikasi antar Goroutines, dan menyediakan cara untuk menyinkronkan eksekusi beberapa Goroutines. Channel dibuat menggunakan fungsi 'make', dan dapat digunakan untuk mengirim dan menerima data antar Goroutine..[6]
+
+#### Fitur
+
+1. **Goroutines**: [7]
+   - **Ringan dan Efisien**: Dapat dijalankan dalam jumlah besar dengan penggunaan memori yang minimal.
+   - **Pengelolaan Otomatis**: Penjadwalan otomatis oleh Go runtime, memudahkan pengembangan.
+   - **Stack Dinamis**: Stack dapat tumbuh sesuai kebutuhan, mengoptimalkan penggunaan memori.
+
+2. **Channels**:[7]
+   - **Komunikasi Aman**: Memungkinkan pertukaran data yang terkoordinasi antar goroutines, mencegah kondisi balapan.
+   - **Sinkronisasi Eksekusi**: Menyinkronkan eksekusi beberapa goroutines.
+   - **Blocking dan Non-blocking**: Mendukung operasi pengiriman dan penerimaan data dengan fleksibilitas.
+
+3. **Select Statement**: [7]
+   - **Pengelolaan Multi-channel**: Memungkinkan goroutine menunggu di beberapa channel sekaligus.
+
+4. **Kombinasi dengan Fungsi**: [7]
+   - **Fungsi Anonim**: Memudahkan pembuatan goroutine yang fleksibel dalam logika program.
+
+### 3. Erlang
+#### Sejarah
+Erlang muncul dari industri telekomunikasi pada tahun 1986 di Ericsson, sebuah perusahaan Swedia. Menghadapi tugas monumental untuk menangani jutaan panggilan telepon secara bersamaan, para pengembang menyadari perlunya bahasa dan runtime yang mampu menskalakan sistem konkuren yang begitu besar secara efisien..[3]
+
+#### Konsep
+
+1. **Model Aktor:** Menjelaskan bagaimana komputasi concurrent diorganisasi menjadi entitas independen yang disebut aktor.[3]
+2. **Pengiriman Pesan:** Menggambarkan cara aktor berkomunikasi tanpa menggunakan memori bersama, yang merupakan prinsip penting dalam model aktor.[3][7]
+3. **Fault-Tolerance:** Menjelaskan bahwa ketika aktor mengalami kesalahan, ia dapat dengan cepat di-restart untuk menjaga integritas sistem.[3][7]
+
+#### Fitur
+1. **Encapsulated State:** Menyiratkan bahwa setiap aktor memiliki state yang terenkapsulasi, yang merupakan fitur dari model aktor.[3][7]
+2. **Supervisors dan Supervision Trees:** Menyebutkan struktur dan mekanisme yang digunakan untuk pengawasan dan pemulihan dari kesalahan, yang merupakan fitur penting dalam implementasi fault-tolerance di Erlang.[3][7]
 
 #### Referensi
-[1] [Bilginc](https://bilginc.com/en/blog/concurrent-programming-languages-5908/#:~:text=Go%20(Golang)%3A%20Developed%20by,and%20provides%20robust%20concurrency%20mechanisms)
 
-[2] [StudySmarter](https://www.studysmarter.co.uk/explanations/computer-science/computer-programming/concurrent-programming/)
+[1] [BPPTIK KOMINFO](https://bpptik.kominfo.go.id/Publikasi/detail/sejarah-java#:~:text=Java%20dikembangkan%20pada%20tahun%201990,interaktif%2C%20oven%20serba%20bisa)
 
-[3] [ChatGPT](https://chatgpt.com/share/66f52e95-5f00-8002-b2c7-d029cb98ac9e)
+[2] [Ekrut](https://www.ekrut.com/media/sejarah-bahasa-pemrograman-golang#3_fitur_dalam_bahasa_go)
 
+[3] [Medium](https://medium.com/@sid.lanke.123/mastering-concurrency-with-erlang-a-beginners-guide-7b3221a1223e#:~:text=Erlang%E2%80%99s%20Concurrency%20Model%20At%20the%20heart%20of%20Erlang%E2%80%99s,the%20pitfalls%20of%20shared%20memory%20and%20locking%20mechanisms.)
+
+[4] [Medium](https://aeontanvir.medium.com/java-multithreading-a-step-by-step-guide-for-concurrent-programming-3bf5dccbbfa1#:~:text=Multithreading%20is%20a%20powerful%20concept%20in%20Java%20that%20allows%20us)
+
+[5] [ChatGPT](https://chatgpt.com/share/66f57c57-24cc-8002-9db5-6a3e2d8a8e03)
+
+[6] [Medium](https://medium.com/@jamal.kaksouri/goroutines-in-golang-understanding-and-implementing-concurrent-programming-in-go-600187bcfaa2#:~:text=One%20of%20the%20key%20features%20of%20Golang%20is%20its%20ability)
+
+[7] [ChatGPT](https://chatgpt.com/share/66f583be-db90-8002-90e4-135b79afdf92)
 
 ### Pros/Cons setiap Bahasa Pemrograman
 
