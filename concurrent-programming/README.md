@@ -278,7 +278,9 @@ Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness
 ---
 
 __Race condition__ adalah masalah umum dalam pemrograman concurrent yang terjadi ketika hasil akhir dari program bergantung pada urutan atau timing dari eksekusi thread. Kondisi ini dapat menyebabkan _behavior_ tak terduga, yang sering kali sulit untuk di-debug.
+
 ![image](https://uploads.sitepoint.com/wp-content/uploads/2017/02/1486567898race-condition.jpg)
+
 __Race condition__ terjadi ketika dua atau lebih thread dapat mengakses data bersamaan (benar-benar bersamaan) dan mencoba mengubahnya pada saat yang sama, tanpa adanya mekanisme sinkronisasi yang memadai. Oleh karena itu, hasil perubahan data bergantung pada algoritma _thread scheduling_, yaitu kedua thread _balapan_ (__racing__) untuk mengakses/mengubah data, dan hanya thread yang beruntung saja yang bisa mengakses data tersebut. [[1]](#referensi-3) [[2]](#referensi-3)
 
 #### Contoh Sederhana
