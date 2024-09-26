@@ -73,14 +73,14 @@ Dengan dukungannya yang kuat untuk konkurensi berbasis thread, Java adalah salah
 * Primitif untuk pembuatan dan manajemen thread, serta mekanisme sinkronisasi bawaan seperti blok tersinkronisasi, wait(), dan notify().[2]
 * Komunitas pengguna yang besar dan dokumentasi yang luas untuk praktik terbaik pemrograman konkuren. [2]
 
-#### Golang
+#### 2. Golang
 Dikembangkan oleh Google, Go (Golang) dirancang dengan mempertimbangkan konkurensi dan memiliki dukungan asli untuk pemrograman konkuren ringan menggunakan “goroutines” dan saluran. Keuntungan Go untuk pemrograman konkuren antara lain:
 
 * “Goroutine” dan konstruksi saluran bawaan untuk membuat dan mengoordinasikan tugas-tugas ringan, yang mengarah pada program bersamaan yang lebih efisien dan mudah. [2]
 * Pengumpulan sampah otomatis, mengurangi kebutuhan untuk mengelola alokasi dan deallokasi memori secara manual dalam program bersamaan. [2]
 * Kompilasi biner statis, menyederhanakan penyebaran program konkuren di berbagai platform. [2]
 
-#### Erlang
+#### 3. Erlang
 Bahasa pemrograman fungsional yang dirancang khusus untuk konkurensi, toleransi kesalahan, dan distribusi, Erlang terkenal karena penggunaannya dalam infrastruktur telekomunikasi dan sistem server yang sangat konkuren. Keunggulannya dalam pemrograman konkuren adalah: [2]
 
 * Model proses yang ringan dan penjadwal preemptive, yang memungkinkan penanganan konkurensi dan pemanfaatan sumber daya yang efektif, bahkan pada sistem berskala besar. [2]
