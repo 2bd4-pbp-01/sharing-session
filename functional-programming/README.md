@@ -33,46 +33,46 @@ Functional programming (FP) adalah paradigma pemrograman yang berfokus pada peng
 
 Dasar-Dasar Functional Programming
 
-1. Pure Functions: Fungsi yang selalu memberikan hasil yang sama untuk input yang sama dan tidak memiliki efek samping.
+1. **Pure Functions**: Fungsi yang selalu memberikan hasil yang sama untuk input yang sama dan tidak memiliki efek samping.
 
-2. Immutable data: Setelah data dibuat, tidak dapat diubah, sehingga menghindari masalah yang tidak terduga.
+2. **Immutable Data**: Setelah data dibuat, tidak dapat diubah, sehingga menghindari masalah yang tidak terduga.
 
-3. First-class functions: Fungsi diperlakukan seperti data lainnya, dapat diteruskan sebagai argumen atau dikembalikan dari fungsi lain.
+3. **First-Class Functions**: Fungsi diperlakukan seperti data lainnya, dapat diteruskan sebagai argumen atau dikembalikan dari fungsi lain.
 
-4. Recursion: Fungsi dapat memanggil dirinya sendiri untuk melakukan iterasi tanpa menggunakan loop tradisional.
+4. **Recursion**: Fungsi dapat memanggil dirinya sendiri untuk melakukan iterasi tanpa menggunakan loop tradisional.
 
-5. Higher-order functions: Fungsi yang dapat menerima fungsi lain sebagai argumen atau mengembalikannya.
+5. **Higher-order Functions**: Fungsi yang dapat menerima fungsi lain sebagai argumen atau mengembalikannya.
 
 ### Kenapa Perlu Menggunakan Functional Programming
 
 Ada beberapa alasan untuk memilih functional programming[^3]:
 
-1. Kode Lebih Terstruktur dan Bersih: Karena fungsi-fungsi murni dan sifat immutability, kode menjadi lebih mudah diprediksi dan dipelihara.
+1. **Kode Lebih Terstruktur dan Bersih**: Karena fungsi-fungsi murni dan sifat immutability, kode menjadi lebih mudah diprediksi dan dipelihara.
 
-2. Mendukung Pemrograman Paralel: FP secara alami mendukung pemrograman paralel, karena tidak adanya shared state mengurangi potensi konflik saat fungsi berjalan secara bersamaan.
+2. **Mendukung Pemrograman Paralel**: FP secara alami mendukung pemrograman paralel, karena tidak adanya shared state mengurangi potensi konflik saat fungsi berjalan secara bersamaan.
 
-3. Memudahkan Testing dan Debugging: Karena FP menghindari efek samping, testing dan debugging lebih sederhana, karena fungsi tidak bergantung pada status eksternal​
+3. **Memudahkan Testing dan Debugging**: Karena FP menghindari efek samping, testing dan debugging lebih sederhana, karena fungsi tidak bergantung pada status eksternal​
 
-4. Keringkasan: Mengurangi jumlah kode yang perlu ditulis.
+4. **Keringkasan**: Mengurangi jumlah kode yang perlu ditulis.
 
-5. Prediktabilitas: Kode lebih mudah dipahami karena tidak ada efek samping.
+5. **Prediktabilitas**: Kode lebih mudah dipahami karena tidak ada efek samping.
 
-6. Modularitas: Fungsi murni dapat digunakan di berbagai tempat tanpa ketergantungan pada konteks luar.
+6. **Modularitas**: Fungsi murni dapat digunakan di berbagai tempat tanpa ketergantungan pada konteks luar.
 
 ### Pros/Cons
 
-Kelebihan[^1]:
+Adapun kelebihan yang dimiliki Functional programming[^1], diantaranya:
 
-- Lebih mudah diuji: Tanpa adanya efek samping, memverifikasi fungsi dalam FP menjadi lebih sederhana;
-- Dukungan parallelism/concurent: FP mendukung pemrograman paralel, yang sangat berguna di aplikasi yang membutuhkan kinerja tinggi atau skala besar seperti pemrosesan big data dan komputasi terdistribusi;
-- Modular dan Reusable: FP mendorong penggunaan kembali fungsi, yang membuat kode lebih modular dan mudah dirawat;
+- **Lebih mudah diuji**: Tanpa adanya efek samping, memverifikasi fungsi dalam FP menjadi lebih sederhana;
+- **Dukungan parallelism/concurent**: FP mendukung pemrograman paralel, yang sangat berguna di aplikasi yang membutuhkan kinerja tinggi atau skala besar seperti pemrosesan big data dan komputasi terdistribusi;
+- **Modular dan Reusable**: FP mendorong penggunaan kembali fungsi, yang membuat kode lebih modular dan mudah dirawat;
 - Pure function lebih mudah dipahami karena tidak mengubah keadaan dan hanya bergantung pada input;
 - Mengadopsi lazy evaluation, yang menghindari evaluasi berulang.
 
-Kekurangan[^1]:
+Meskipun begitu, terdapat kekurangan yang dimiliki oleh Functional programming[^1], diantaranya:
 
-- Kurva belajar yang curam: Bagi pemrogram yang terbiasa dengan paradigma imperatif atau OOP, beralih ke FP membutuhkan usaha ekstra untuk memahami konsep seperti fungsi murni, komposisi fungsi, dan data immutability;
-- Kurang efisien untuk beberapa aplikasi: Dalam beberapa kasus, seperti pemrograman tingkat rendah yang memerlukan akses langsung ke perangkat keras, FP tidak selalu merupakan pilihan yang paling efisien;
+- **Kurva belajar yang curam**: Bagi pemrogram yang terbiasa dengan paradigma imperatif atau OOP, beralih ke FP membutuhkan usaha ekstra untuk memahami konsep seperti fungsi murni, komposisi fungsi, dan data immutability;
+- **Kurang efisien untuk beberapa aplikasi**: Dalam beberapa kasus, seperti pemrograman tingkat rendah yang memerlukan akses langsung ke perangkat keras, FP tidak selalu merupakan pilihan yang paling efisien;
 - Menulis pure function kadang dapat mengurangi keterbacaan kode;
 - Nilai yang tidak dapat diubah dan rekursi dapat mengurangi kinerja;
 - Menggabungkan pure function dengan operasi I/O bisa menjadi tantangan.
@@ -347,49 +347,48 @@ mengenai bagaimana Haskell digunakan:
 
 - [(YouTube) Beberapa project berbasis Haskell yang dikembangkan oleh Meta / Facebook](https://youtu.be/10gSoVZ5yXY?si=G9Avy3wBKAUT_4Lp)
 
-<details>
-  <summary>TLDR</summary>
+    <details>
+      <summary>TLDR</summary>
 
-Facebook menggunakan Haskell untuk membuat sistem pendeteksi penyalahgunaan
-seperti spam, akun palsu, dan penipuan bernama Sigma. Sigma merupakan sistem
-yang krusial dan digunakan dalam produksi skala besar (hampir 1 juta request
-per detik).
+  > Facebook menggunakan Haskell untuk membuat sistem pendeteksi penyalahgunaan
+  > seperti spam, akun palsu, dan penipuan bernama Sigma. Sigma merupakan sistem
+  > yang krusial dan digunakan dalam produksi skala besar (hampir 1 juta request
+  > per detik).
+  >
+  > Alasan Facebook menggunakan Haskell adalah untuk mengimplementasikan konsep
+  > bernama [dependent type](https://stackoverflow.com/questions/9338709/what-is-dependent-typing),
+  > yaitu sebuah tipe yang pendefinisiannya tergantung suatu nilai. Hal ini karena
+  > Haskell mendukung [static type](#tipe-data-data-type).
+  >
+  > Selain itu, penulisan kode dengan bahasa lain lebih sering terjadi bug seperti
+  > infinite loop, seringkali menerima kesalahan tulisan pada input, dan sebagainya
+  > ketimbang menggunakan Haskell.
 
-Alasan Facebook menggunakan Haskell adalah untuk mengimplementasikan konsep
-bernama [dependent type](https://stackoverflow.com/questions/9338709/what-is-dependent-typing),
-yaitu sebuah tipe yang pendefinisiannya tergantung suatu nilai. Hal ini karena
-Haskell mendukung [static type](#tipe-data-data-type).
-
-Selain itu, penulisan kode dengan bahasa lain lebih sering terjadi bug seperti
-infinite loop, seringkali menerima kesalahan tulisan pada input, dan sebagainya
-ketimbang menggunakan Haskell.
-
-</details>
+    </details>
 
 - [Github Semantic: Tool untuk parsing, analisis, dan membandingan source code untuk berbagai bahasa pemrograman](https://github.com/github/semantic/blob/main/docs/why-haskell.md)
 
-<details>
-  <summary>TLDR</summary>
+    <details>
+      <summary>TLDR</summary>
 
-Github Semantic menggunakan Haskell karena fiturnya memungkinkan untuk
-mengekspresikan struktur data dan algoritmanya secara ringkas, benar,
-dan elegan. Haskell juga memberikan kemudahan dalam merepresentasikan
-aljabar di dalam sintaks bahasa pemrograman.
+  > Github Semantic menggunakan Haskell karena fiturnya memungkinkan untuk
+  > mengekspresikan struktur data dan algoritmanya secara ringkas, benar,
+  > dan elegan. Haskell juga memberikan kemudahan dalam merepresentasikan
+  > aljabar di dalam sintaks bahasa pemrograman.
 
-</details>
+    </details>
 
 - [(Blog) Cardano: Platform blockchain dan cryptocurrency](https://forkast.news/video-audio/watch-charles-hoskinson-co-founder-of-ethereum-and-iohk-on-why-cardano-is-a-better-platform-part-i-2-2/)
+    <details>
+      <summary>TLDR</summary>
 
-<details>
-  <summary>TLDR</summary>
+  > Alasan Cardano mengadopsi Haskell untuk implementasinya yaitu karena Haskell
+  > lebih menjamin ketepatan / keakuratan (high-assurance). Haskell menurunkan konsep
+  > dari [Functional Programming](#overview), yaitu sebuah variabel yang stateless
+  > atau mutable. Selain itu fungsi yang didefinisikan tidak memiliki side-effect
+  > yang berimbas pada bug.
 
-Alasan Cardano mengadopsi Haskell untuk implementasinya yaitu karena Haskell lebih
-menjamin ketepatan / keakuratan (high-assurance). Haskell menurunkan konsep dari
-[Functional Programming](#overview), yaitu sebuah variabel yang stateless atau mutable.
-Selain itu fungsi yang didefinisikan tidak memiliki side-effect yang berimbas pada
-bug.
-
-</details>
+    </details>
 
 ### Haskell Development Environments
 
