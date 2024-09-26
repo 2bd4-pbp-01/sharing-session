@@ -355,6 +355,7 @@ func increment() {
     <td><img src="./image/deadlock4.png" style="width:100%; height:auto;" /></td> 
   </tr> 
 </table>
+<center><a href="https://www.craig-wood.com/nick/articles/deadlocks-in-go/"> Sumber Gambar</a></center>
 
 __Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapat melanjutkan eksekusinya karena saling menunggu satu sama lain untuk melepaskan sumber daya yang sedang digunakan. Dalam konteks sistem operasi atau pemrograman multi-threaded, deadlock menjadi masalah serius karena dapat menyebabkan sistem atau aplikasi menjadi tidak responsif.
 
