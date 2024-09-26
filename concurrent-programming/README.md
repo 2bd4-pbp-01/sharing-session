@@ -179,11 +179,46 @@ Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness
 
 __Race condition__ adalah masalah umum dalam pemrograman concurrent yang terjadi ketika hasil akhir dari program bergantung pada urutan atau timing dari eksekusi thread. Kondisi ini dapat menyebabkan _behavior_ tak terduga, yang sering kali sulit untuk di-debug.
 ![image](https://uploads.sitepoint.com/wp-content/uploads/2017/02/1486567898race-condition.jpg)
-__Race condition__ terjadi ketika dua atau lebih thread dapat mengakses data bersama dan mencoba mengubahnya pada saat yang sama. Karena algoritma _thread scheduling_ dapat beralih di antara thread kapan saja, Anda tidak tahu urutan di mana thread akan mencoba mengakses data bersama. Oleh karena itu, hasil perubahan data bergantung pada algoritma penjadwalan thread, yaitu kedua thread berlomba (_racing_) untuk mengakses/mengubah data. [1](#referensi-3)
+__Race condition__ terjadi ketika dua atau lebih thread dapat mengakses data bersamaan (benar-benar bersamaan) dan mencoba mengubahnya pada saat yang sama, tanpa adanya mekanisme sinkronisasi yang memadai. Oleh karena itu, hasil perubahan data bergantung pada algoritma _thread scheduling_, yaitu kedua thread _balapan_ (__racing__) untuk mengakses/mengubah data, dan hanya thread yang beruntung saja yang bisa mengakses data tersebut. [[1]](#referensi-3) [[2]](#referensi-3)
+
+#### Contoh Sederhana
+
+Misalkan kita memiliki sebuah variabel penghitung yang diakses oleh dua goroutine (unit eksekusi terkecil dalam Go) secara bersamaan:
+
+```go
+var counter int
+
+func increment() {
+    counter++
+}
+
+func main() {
+    go increment()
+    go increment()
+    // ...
+} 
+```
+
+Jika kedua goroutine ini menjalankan ``increment()`` secara bersamaan, bisa terjadi kondisi di mana keduanya membaca nilai ``counter`` yang sama, lalu menambahkan 1, dan kemudian menyimpan hasil kembali ke ``counter``. Akibatnya, nilai akhir ``counter`` mungkin hanya bertambah 1, bukan 2 seperti yang diharapkan.
+
+#### Cara Mencegah dengan Mutex
+
+Untuk mekanisme sinkronisasi, Go menyediakan sync.Mutex yang bisa dimanfaatkan untuk keperluan **lock** dan unlock data. Mutex melakukan pengubahan level akses sebuah data menjadi eksklusif, menjadikan data tersebut hanya dapat dikonsumsi (read / write) oleh satu buah goroutine saja. [[2]](#referensi-3)
+
+```golang
+var mutex sync.Mutex
+var counter int
+
+func increment() {
+    mutex.Lock()
+    counter++
+    mutex.Unlock()
+}
+```
 
 #### Pranala Menarik
 
-- [(News) Twitter duplicate tweets issue](https://www.socialmediatoday.com/news/twitter-implements-new-rules-to-limit-the-reach-of-duplicated-tweets/623531)
+- [2012 Twitter duplicate tweets issue](https://www.socialmediatoday.com/news/twitter-implements-new-rules-to-limit-the-reach-of-duplicated-tweets/623531)
     <details>
       <summary>TLDR</summary>
 
@@ -191,8 +226,17 @@ __Race condition__ terjadi ketika dua atau lebih thread dapat mengakses data ber
 
     </details>
 
+- [The Worst Computer Bugs in History: Race conditions in Therac-25](https://www.bugsnag.com/blog/bug-day-race-condition-therac-25/)<details>
+      <summary>TLDR</summary>
+
+  > Mesin terapi radiasi Therac-25 memiliki bug kritis berupa _race condition_ dalam perangkat lunaknya, yang menyebabkan pemberian dosis radiasi yang salah. Kurangnya sinkronisasi yang tepat antara komponen-komponen mesin memungkinkan beberapa _safety check_ terlewati, sehingga radiasi yang diberikan jauh melebihi batas aman. Bug ini menyebabkan kematian dan cedera serius pada beberapa pasien. Kasus ini menjadi salah satu contoh paling tragis dari _race condition_ yang berdampak fatal di dunia nyata, menekankan betapa pentingnya _concurrency control_ yang benar di sistem _safety-critical_.
+
+    </details>
+
 #### Referensi
 [1] [Stack Overflow - What is a race condition?](https://stackoverflow.com/questions/34510/what-is-a-race-condition)
+
+[2] [Golang sync.Mutex - Dasar Pemrograman Golang](https://dasarpemrogramangolang.novalagung.com/A-mutex.html)
 
 ### Deadlock
 
