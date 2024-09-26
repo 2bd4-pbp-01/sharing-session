@@ -64,12 +64,97 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ## Implementasi pada Bahasa Pemrograman
 
 ### Bahasa Pemrograman yang Mendukung Concurrent
+Bahasa pemrograman yang mendukung concurrent programming sangat banyak, tetapi kelompok kami coba membahas bahasa pemrograman yang paling baik untuk mendukung concurrent programming. Menentukan bahasa “terbaik” untuk pemrograman konkuren bergantung pada berbagai faktor, termasuk domain aplikasi tertentu, infrastruktur, keahlian pengembang, dan persyaratan proyek. Namun, beberapa bahasa telah menarik perhatian karena fitur dan kemampuan pemrograman konkuren mereka. [1]
 
-#### Golang
+#### 1. Java
+Java dirancang oleh James Gosling di Sun Microsystems (sekarang milik Oracle) pada tahun 1995, dan merupakan salah satu bahasa pemrograman yang paling populer di dunia. Salah satu kekuatan utama Java adalah kemampuannya menangani multithreading dengan baik, membuatnya ideal untuk concurrent programming dalam skala besar.[3] Dengan dukungannya yang kuat untuk konkurensi berbasis thread, Java adalah salah satu bahasa yang paling populer untuk pemrograman konkuren.[2] Java adalah bahasa populer yang sering digunakan di berbagai industri, terutama di perusahaan besar. Java memiliki dukungan kuat untuk multithreading dan concurrent programming melalui berbagai API bawaan yang powerful.[3]
 
-#### <isi/ganti-dengan-bahasa-pemrogramannya>
+__USE CASE__
+
+Perbankan, E-commerce, dan Aplikasi Enterprise yang memerlukan sistem backend kuat sering kali menggunakan Java untuk concurrent programming. Contoh: Netflix menggunakan Java untuk sebagian besar sistemnya yang berfokus pada manajemen beban kerja concurrent secara efisien.[3]
+
+#### 2. Golang
+Go atau Golang diciptakan oleh Google pada tahun 2009, dengan tujuan utama untuk menyederhanakan concurrency dan membuat pemrograman berskala besar lebih mudah dikelola. Bahasa ini terkenal dengan kecepatan eksekusi, kesederhanaan, dan dukungan concurrent programming yang kuat.[3] Go (Golang) dirancang dengan mempertimbangkan konkurensi dan memiliki dukungan asli untuk pemrograman konkuren ringan menggunakan “goroutines” dan saluran. [2] Go adalah bahasa pemrograman yang dirancang oleh Google untuk menangani concurrent programming secara efisien dan mudah digunakan. Go menonjol karena kesederhanaannya dalam mengelola concurrent tasks dibandingkan dengan bahasa lain.[3]
+
+__USE CASE__
+
+Go digunakan oleh banyak perusahaan besar seperti Google, Uber, Dropbox, dan Docker untuk menangani concurrent programming dalam layanan web, microservices, dan aplikasi cloud-native. Contoh: Kubernetes, salah satu platform container orchestration terkemuka, dibangun menggunakan Go.
+
+#### 3. Erlang
+Dibuat oleh Ericsson pada akhir 1980-an, Erlang dirancang untuk menangani sistem telekomunikasi yang membutuhkan high availability, scalability, dan fault tolerance.[3] Bahasa pemrograman fungsional ini dirancang khusus untuk konkurensi, toleransi kesalahan, dan distribusi, Erlang terkenal karena penggunaannya dalam infrastruktur telekomunikasi dan sistem server yang sangat konkuren.[2] Erlang dirancang khusus untuk concurrent programming sejak awal pembuatannya. Bahasa ini dikembangkan oleh perusahaan telekomunikasi Ericsson untuk sistem yang membutuhkan keandalan tinggi dan mampu menangani banyak proses secara bersamaan.[3] 
+
+__USE CASE__
+
+WhatsApp menggunakan Erlang untuk menangani jutaan pengguna dengan kinerja yang sangat tinggi. Sistem telekomunikasi, game online, dan perangkat lunak mission-critical yang membutuhkan keandalan juga memanfaatkan Erlang.[3]
+
+#### Referensi
+[1] [Bilginc](https://bilginc.com/en/blog/concurrent-programming-languages-5908/#:~:text=Go%20(Golang)%3A%20Developed%20by,and%20provides%20robust%20concurrency%20mechanisms)
+
+[2] [StudySmarter](https://www.studysmarter.co.uk/explanations/computer-science/computer-programming/concurrent-programming/)
+
+[3] [ChatGPT](https://chatgpt.com/share/66f52e95-5f00-8002-b2c7-d029cb98ac9e)
+
 
 ### Pros/Cons setiap Bahasa Pemrograman
+
+## Golang
+
+## Kelebihan Golang:
+- Dukungan Concurrency yang Kuat: Goroutines dan channels memudahkan pengelolaan banyak tugas sekaligus, ideal untuk aplikasi server dan microservices.[1]​[2]
+- Garbage Collector yang Efisien: Mengelola memori secara otomatis, mengurangi beban pengembang.[1]​[2]
+- Sintaks yang Sederhana: Mudah dipahami dan dipelajari, dengan dokumentasi yang komprehensif.[1]​[2]
+- Skalabilitas Tinggi: Bekerja baik pada berbagai inti CPU, cocok untuk infrastruktur cloud dan sistem terdistribusi.[3]​[2]
+- Ekosistem yang Mapan: Pustaka standar yang kaya dan banyak pustaka pihak ketiga.[3]​[2]
+
+## Kekurangan Golang:
+- Kurangnya Pustaka untuk Aplikasi Monolitik: Kurang memiliki kerangka kerja matang dibandingkan Java atau C#.[3]​[2]
+- Pengelolaan Kesalahan yang Verbose: Penanganan kesalahan dapat membuat kode terlihat rumit.[3]​[2]
+- Waktu Kompilasi yang Lama: Meskipun lebih cepat dari C++, proyek besar dapat mengalami waktu kompilasi yang lama.[3]​[2]
+- Fitur Generik yang Baru Dikenalkan: Masih baru, dan beberapa pengembang mungkin belum mengadopsinya sepenuhnya.[3]​[2]
+
+## Java
+
+## Kelebihan Java:
+- Model Thread yang Sederhana:
+Java menyediakan API yang sederhana untuk membuat dan mengelola thread melalui kelas Thread dan antarmuka Runnable. Ini memungkinkan pengembang untuk dengan mudah membuat aplikasi yang memanfaatkan pemrosesan paralel.
+- Dukungan Built-in untuk Synchronization:
+Java memiliki kata kunci synchronized yang memungkinkan pengembang untuk mengontrol akses ke sumber daya yang dibagikan oleh beberapa thread, membantu mencegah race condition.
+- Paket Concurrency yang Kaya:
+Java menyediakan paket java.util.concurrent, yang mencakup berbagai kelas dan antarmuka untuk mendukung pemrograman konkuren, seperti ExecutorService, CountDownLatch, dan Semaphore. Ini membuat manajemen thread lebih mudah dan lebih efisien.
+- Fork/Join Framework:
+Java menawarkan framework fork/join yang memungkinkan pembagian tugas menjadi sub-tugas yang lebih kecil, sehingga memudahkan pemrograman paralel dan memaksimalkan penggunaan CPU.
+- Garbage Collection Otomatis:
+Java mengelola memori secara otomatis, yang membantu mengurangi masalah kebocoran memori yang sering muncul dalam aplikasi konkuren.
+
+## Kekurangan Java:
+- Overhead Kinerja:
+Meskipun Java menawarkan banyak fitur untuk concurrency, penggunaan thread dapat menghasilkan overhead, terutama jika banyak thread yang dibuat dan dihancurkan secara berulang.
+- Kompleksitas dalam Debugging:
+Aplikasi konkuren dapat menjadi sulit untuk didiagnosis dan di-debug, dengan masalah seperti deadlock dan race condition yang sulit dideteksi.
+- Keterbatasan dalam Model Pemrograman:
+Model pemrograman berbasis thread di Java bisa menjadi rumit ketika banyak thread berinteraksi, yang dapat membuat kode menjadi sulit dibaca dan dipelihara.
+- Keterbatasan pada Blok Synchronized:
+Penggunaan blok synchronized dapat mengurangi tingkat paralelisme, karena hanya satu thread yang dapat mengakses blok synchronized pada satu waktu.
+- Masalah Liveness dan Safety:
+Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness (tidak ada kemajuan) dan safety (konsistensi data), yang dapat menyebabkan perilaku tak terduga.
+
+## Erlang
+
+## Kelebihan Erlang:
+
+## Kekurangan Erlang:
+
+#### Referensi
+
+[1] [Ruangbacaku](https://www.ruangbacaku.com/detail-artikel/apa-itu-golang-kelebihan-dan-alasan-mengapa-harus-mempelajarinya).
+
+
+[2] [Logique](https://www.logique.co.id/blog/2019/08/19/bahasa-pemrograman-golang/).
+
+[3] [Silicon Review](https://thesiliconreview.com/2024/08/go-in-2024-an-in-depth-analysis-and-comparison-to-other-languages).
+
+[4] [ChatGPT(Java)](https://chatgpt.com/share/66f52e09-0f34-8010-906b-9aead7128468)
+
 
 ---
 
