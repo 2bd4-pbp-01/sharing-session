@@ -99,7 +99,6 @@ sehingga meningkatkan responsivitas dan efisiensi. Parallelism juga bertujuan un
 ## Implementasi pada Bahasa Pemrograman
 ![Diagram Interaktif](./image/Implementasi%20pada%20Bahasa%20PemogramanMM(1).png)
 ### Bahasa Pemrograman yang Mendukung Concurrent
-Tentu! Berikut adalah informasi mengenai bahasa pemrograman Java, Go (Golang), dan Erlang yang mendukung concurrent programming:
 
 ### 1. Java
 
