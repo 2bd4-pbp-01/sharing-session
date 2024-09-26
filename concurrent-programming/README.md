@@ -71,6 +71,32 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 
 ### Pros/Cons setiap Bahasa Pemrograman
 
+## Kelebihan Golang:
+- Dukungan Concurrency yang Kuat: Goroutines dan channels memudahkan pengelolaan banyak tugas sekaligus, ideal untuk aplikasi server dan microservices.[1]​[2]
+- Garbage Collector yang Efisien: Mengelola memori secara otomatis, mengurangi beban pengembang.[1]​[2]
+- Sintaks yang Sederhana: Mudah dipahami dan dipelajari, dengan dokumentasi yang komprehensif.[1]​[2]
+- Skalabilitas Tinggi: Bekerja baik pada berbagai inti CPU, cocok untuk infrastruktur cloud dan sistem terdistribusi.[3]​[2]
+- Ekosistem yang Mapan: Pustaka standar yang kaya dan banyak pustaka pihak ketiga.[3]​[2]
+
+## Kekurangan Golang:
+- Kurangnya Pustaka untuk Aplikasi Monolitik: Kurang memiliki kerangka kerja matang dibandingkan Java atau C#.[3]​[2]
+- Pengelolaan Kesalahan yang Verbose: Penanganan kesalahan dapat membuat kode terlihat rumit.[3]​[2]
+- Keterbatasan dalam Pemrograman Berorientasi Objek: Tidak ada pewarisan kelas tradisional, bisa membingungkan bagi pengembang terbiasa dengan OOP.[3]​[2]
+- Waktu Kompilasi yang Lama: Meskipun lebih cepat dari C++, proyek besar dapat mengalami waktu kompilasi yang lama.[3]​[2]
+- Fitur Generik yang Baru Dikenalkan: Masih baru, dan beberapa pengembang mungkin belum mengadopsinya sepenuhnya.[3]​[2]
+
+#### Referensi
+
+[1] [Ruangbacaku](https://www.ruangbacaku.com/detail-artikel/apa-itu-golang-kelebihan-dan-alasan-mengapa-harus-mempelajarinya).
+
+
+[2] [Logique](https://www.logique.co.id/blog/2019/08/19/bahasa-pemrograman-golang/).
+
+[3] [Silicon Review](https://thesiliconreview.com/2024/08/go-in-2024-an-in-depth-analysis-and-comparison-to-other-languages).
+
+
+
+
 ---
 
 ## Studi Kasus
