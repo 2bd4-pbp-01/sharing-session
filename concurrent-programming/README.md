@@ -82,27 +82,27 @@ Java menyediakan seperangkat utilitas konkurensi yang kuat yang menyederhanakan 
 
 ### 2. Go (Golang)
 #### Sejarah
-Go (sering disebut sebagai Golang) adalah bahasa pemrograman yang dibuat di Google[13] pada tahun 2009 oleh Robert Griesemer, Rob Pike, dan Ken Thompson. Go adalah bahasa pemrograman sumber terbuka yang mudah, sederhana, efisien. Selain itu, Go memiliki level yang sama dengan Java.[2]
+Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali dikembangkan di Google sejak 2007 oleh tiga orang yakni, Ken Thompson, Rob Pike, dan Robert Griesemer. Kemudian dirilis ke publik pada 2009 sebagai bahasa program open source. Bahasa program Go didasarkan pada Python, Java dan C++..[2]
 
 #### Konsep
 **Goroutines dan Channels** adalah dua konsep penting dalam pemrograman konkuren di Golang. Channel digunakan untuk berkomunikasi antar Goroutines, dan menyediakan cara untuk menyinkronkan eksekusi beberapa Goroutines. Channel dibuat menggunakan fungsi 'make', dan dapat digunakan untuk mengirim dan menerima data antar Goroutine..[6]
 
 #### Fitur
 
-1. **Goroutines**:
+1. **Goroutines**: [7]
    - **Ringan dan Efisien**: Dapat dijalankan dalam jumlah besar dengan penggunaan memori yang minimal.
    - **Pengelolaan Otomatis**: Penjadwalan otomatis oleh Go runtime, memudahkan pengembangan.
    - **Stack Dinamis**: Stack dapat tumbuh sesuai kebutuhan, mengoptimalkan penggunaan memori.
 
-2. **Channels**:
+2. **Channels**:[7]
    - **Komunikasi Aman**: Memungkinkan pertukaran data yang terkoordinasi antar goroutines, mencegah kondisi balapan.
    - **Sinkronisasi Eksekusi**: Menyinkronkan eksekusi beberapa goroutines.
    - **Blocking dan Non-blocking**: Mendukung operasi pengiriman dan penerimaan data dengan fleksibilitas.
 
-3. **Select Statement**:
+3. **Select Statement**: [7]
    - **Pengelolaan Multi-channel**: Memungkinkan goroutine menunggu di beberapa channel sekaligus.
 
-4. **Kombinasi dengan Fungsi**:
+4. **Kombinasi dengan Fungsi**: [7]
    - **Fungsi Anonim**: Memudahkan pembuatan goroutine yang fleksibel dalam logika program.
 
 ### 3. Erlang
@@ -123,7 +123,7 @@ Erlang muncul dari industri telekomunikasi pada tahun 1986 di Ericsson, sebuah p
 
 [1] [BPPTIK KOMINFO](https://bpptik.kominfo.go.id/Publikasi/detail/sejarah-java#:~:text=Java%20dikembangkan%20pada%20tahun%201990,interaktif%2C%20oven%20serba%20bisa)
 
-[2] [Stekom](https://p2k.stekom.ac.id/ensiklopedia/Go_(bahasa_pemrograman)#:~:text=Go%20(sering%20disebut%20sebagai%20Golang,level%20yang%20sama%20dengan%20Java.)
+[2] [Ekrut](https://www.ekrut.com/media/sejarah-bahasa-pemrograman-golang#3_fitur_dalam_bahasa_go)
 
 [3] [Medium](https://medium.com/@sid.lanke.123/mastering-concurrency-with-erlang-a-beginners-guide-7b3221a1223e#:~:text=Erlang%E2%80%99s%20Concurrency%20Model%20At%20the%20heart%20of%20Erlang%E2%80%99s,the%20pitfalls%20of%20shared%20memory%20and%20locking%20mechanisms.)
 
