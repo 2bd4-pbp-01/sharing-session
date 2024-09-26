@@ -64,10 +64,33 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ## Implementasi pada Bahasa Pemrograman
 
 ### Bahasa Pemrograman yang Mendukung Concurrent
+Bahasa pemrograman yang mendukung concurrent programming sangat banyak, tetapi kelompok kami coba membahas bahasa pemrograman yang paling baik untuk mendukung concurrent programming. Menentukan bahasa “terbaik” untuk pemrograman konkuren bergantung pada berbagai faktor, termasuk domain aplikasi tertentu, infrastruktur, keahlian pengembang, dan persyaratan proyek. Namun, beberapa bahasa telah menarik perhatian karena fitur dan kemampuan pemrograman konkuren mereka. [1]
+
+#### 1. Java
+Dengan dukungannya yang kuat untuk konkurensi berbasis thread, Java adalah salah satu bahasa yang paling populer untuk pemrograman konkuren. Keuntungan menggunakan Java untuk konkurensi antara lain: [2]
+
+* Sekumpulan API dan pustaka konkurensi yang kaya, seperti java.util.concurrent, yang mencakup konstruksi tingkat tinggi seperti ExecutorService dan ConcurrentHashMap untuk pemrograman konkuren yang disederhanakan. [2]
+* Primitif untuk pembuatan dan manajemen thread, serta mekanisme sinkronisasi bawaan seperti blok tersinkronisasi, wait(), dan notify().[2]
+* Komunitas pengguna yang besar dan dokumentasi yang luas untuk praktik terbaik pemrograman konkuren. [2]
 
 #### Golang
+Dikembangkan oleh Google, Go (Golang) dirancang dengan mempertimbangkan konkurensi dan memiliki dukungan asli untuk pemrograman konkuren ringan menggunakan “goroutines” dan saluran. Keuntungan Go untuk pemrograman konkuren antara lain:
 
-#### <isi/ganti-dengan-bahasa-pemrogramannya>
+* “Goroutine” dan konstruksi saluran bawaan untuk membuat dan mengoordinasikan tugas-tugas ringan, yang mengarah pada program bersamaan yang lebih efisien dan mudah. [2]
+* Pengumpulan sampah otomatis, mengurangi kebutuhan untuk mengelola alokasi dan deallokasi memori secara manual dalam program bersamaan. [2]
+* Kompilasi biner statis, menyederhanakan penyebaran program konkuren di berbagai platform. [2]
+
+#### Erlang
+Bahasa pemrograman fungsional yang dirancang khusus untuk konkurensi, toleransi kesalahan, dan distribusi, Erlang terkenal karena penggunaannya dalam infrastruktur telekomunikasi dan sistem server yang sangat konkuren. Keunggulannya dalam pemrograman konkuren adalah: [2]
+
+* Model proses yang ringan dan penjadwal preemptive, yang memungkinkan penanganan konkurensi dan pemanfaatan sumber daya yang efektif, bahkan pada sistem berskala besar. [2]
+* Dukungan bawaan untuk konkurensi pengiriman pesan, dengan pendekatan share-nothing yang menghilangkan kondisi balapan dan masalah inkonsistensi data yang umum terjadi pada model konkurensi lainnya. [2]
+* Toleransi kesalahan yang kuat melalui model aktor, filosofi let-it-crash, dan hierarki supervisor. [2]
+
+#### Referensi
+[1] [Bahasa Pemrograman Terbaik](https://bilginc.com/en/blog/concurrent-programming-languages-5908/#:~:text=Go%20(Golang)%3A%20Developed%20by,and%20provides%20robust%20concurrency%20mechanisms)
+
+[2] [Kelebihan Bahasa Concurrent Programming Terbaik](https://www.studysmarter.co.uk/explanations/computer-science/computer-programming/concurrent-programming/)
 
 ### Pros/Cons setiap Bahasa Pemrograman
 
