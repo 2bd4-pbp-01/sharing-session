@@ -202,4 +202,31 @@ dan [Stack](https://docs.haskellstack.org/en/stable/).
 
 ### 2D Graphics dengan OpenGL dan Haskell
 
+**💻 Source Kode**: [github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/haskell-opengl](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/haskell-opengl)
+
+#### Skenario
+
+Mengimplementasikan libary OpenGL dengan membuat objek 2D dari mulai
+yang sederhana hingga interaktif.
+
+Beberapa library eksternal yang digunakan yaitu
+
+- [OpenGL](https://hackage.haskell.org/package/OpenGL)
+
+  Library yang digunakan untuk menghubungkan Haskell dengan
+  OpenGL graphics system.
+
+- [GLUT](https://hackage.haskell.org/package/GLUT)
+
+  Libary yang menyediakan toolkit sistem window untuk mengembangkan
+  program berbasis OpenGL.
+
+- [GLFW-b](https://hackage.haskell.org/package/GLFW-b)
+
+  Library untuk mengelola window dengan konteks dari OpenGL dan
+  mengelola input dan event sehingga objek 2D yang dibuat dapat
+  lebih interaktif.
+
+#### Why?
+
 ---
