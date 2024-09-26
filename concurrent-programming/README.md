@@ -67,9 +67,13 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 
 #### Golang
 
-#### <isi/ganti-dengan-bahasa-pemrogramannya>
+#### Java
+
+#### Erlang
 
 ### Pros/Cons setiap Bahasa Pemrograman
+
+## Golang
 
 ## Kelebihan Golang:
 - Dukungan Concurrency yang Kuat: Goroutines dan channels memudahkan pengelolaan banyak tugas sekaligus, ideal untuk aplikasi server dan microservices.[1]​[2]
@@ -81,9 +85,40 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 ## Kekurangan Golang:
 - Kurangnya Pustaka untuk Aplikasi Monolitik: Kurang memiliki kerangka kerja matang dibandingkan Java atau C#.[3]​[2]
 - Pengelolaan Kesalahan yang Verbose: Penanganan kesalahan dapat membuat kode terlihat rumit.[3]​[2]
-- Keterbatasan dalam Pemrograman Berorientasi Objek: Tidak ada pewarisan kelas tradisional, bisa membingungkan bagi pengembang terbiasa dengan OOP.[3]​[2]
 - Waktu Kompilasi yang Lama: Meskipun lebih cepat dari C++, proyek besar dapat mengalami waktu kompilasi yang lama.[3]​[2]
 - Fitur Generik yang Baru Dikenalkan: Masih baru, dan beberapa pengembang mungkin belum mengadopsinya sepenuhnya.[3]​[2]
+
+## Java
+
+## Kelebihan Java:
+- Model Thread yang Sederhana:
+Java menyediakan API yang sederhana untuk membuat dan mengelola thread melalui kelas Thread dan antarmuka Runnable. Ini memungkinkan pengembang untuk dengan mudah membuat aplikasi yang memanfaatkan pemrosesan paralel.
+- Dukungan Built-in untuk Synchronization:
+Java memiliki kata kunci synchronized yang memungkinkan pengembang untuk mengontrol akses ke sumber daya yang dibagikan oleh beberapa thread, membantu mencegah race condition.
+- Paket Concurrency yang Kaya:
+Java menyediakan paket java.util.concurrent, yang mencakup berbagai kelas dan antarmuka untuk mendukung pemrograman konkuren, seperti ExecutorService, CountDownLatch, dan Semaphore. Ini membuat manajemen thread lebih mudah dan lebih efisien.
+- Fork/Join Framework:
+Java menawarkan framework fork/join yang memungkinkan pembagian tugas menjadi sub-tugas yang lebih kecil, sehingga memudahkan pemrograman paralel dan memaksimalkan penggunaan CPU.
+- Garbage Collection Otomatis:
+Java mengelola memori secara otomatis, yang membantu mengurangi masalah kebocoran memori yang sering muncul dalam aplikasi konkuren.
+
+## Kekurangan Java:
+- Overhead Kinerja:
+Meskipun Java menawarkan banyak fitur untuk concurrency, penggunaan thread dapat menghasilkan overhead, terutama jika banyak thread yang dibuat dan dihancurkan secara berulang.
+- Kompleksitas dalam Debugging:
+Aplikasi konkuren dapat menjadi sulit untuk didiagnosis dan di-debug, dengan masalah seperti deadlock dan race condition yang sulit dideteksi.
+- Keterbatasan dalam Model Pemrograman:
+Model pemrograman berbasis thread di Java bisa menjadi rumit ketika banyak thread berinteraksi, yang dapat membuat kode menjadi sulit dibaca dan dipelihara.
+- Keterbatasan pada Blok Synchronized:
+Penggunaan blok synchronized dapat mengurangi tingkat paralelisme, karena hanya satu thread yang dapat mengakses blok synchronized pada satu waktu.
+- Masalah Liveness dan Safety:
+Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness (tidak ada kemajuan) dan safety (konsistensi data), yang dapat menyebabkan perilaku tak terduga.
+
+## Erlang
+
+## Kelebihan Erlang:
+
+## Kekurangan Erlang:
 
 #### Referensi
 
@@ -94,7 +129,7 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 
 [3] [Silicon Review](https://thesiliconreview.com/2024/08/go-in-2024-an-in-depth-analysis-and-comparison-to-other-languages).
 
-
+[4] [ChatGPT(Java)](https://chatgpt.com/share/66f52e09-0f34-8010-906b-9aead7128468)
 
 
 ---
