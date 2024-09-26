@@ -454,5 +454,6 @@ Beberapa library eksternal yang digunakan yaitu
   lebih interaktif.
 
 #### Why?
+Haskell adalah Bahasa paling dekat dengan konsep-konsep matematis. Grafik 2d banyak menggunakan operasi geometri, transformasi, dan fungsi matematika lain sehingga penulisan persamaan dan fungsi matematika untuk memanipulasi bangun datar sangat didukung dengan Haskell. Setiap gambar dan trasformasi merupakan hasil dari sebuah fungsi sehingga jika dilakukan manipulasi state sebelumnya tidak akan mempengaruhi gambar baru yang tercipta. Penggunaan Haskell juga lebih mudah karena menggunakan pendekatan deklaratif yang fokusnya lebih ke apa yang ingin digambar dan bukan bagaimana menggambarnya.
 
 ---
