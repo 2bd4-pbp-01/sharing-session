@@ -67,6 +67,13 @@ Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam sat
 Tentu! Berikut adalah informasi mengenai bahasa pemrograman Java, Go (Golang), dan Erlang yang mendukung concurrent programming:
 
 ### 1. Java
+
+<p align="center">
+  <img alt="Java Kawaii Logo" src="https://pbs.twimg.com/media/GLtFpDsbwAAtKmy?format=jpg&name=large" width="580" >
+  </br>
+  <sub>Java logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
+
 #### Sejarah
 Java dikembangkan pada tahun 1990 oleh insinyur Sun, James Gosling sebagai bahasa pemrograman yang  berperan sebagai otak untuk peralatan pintar (TV interaktif, oven serba bisa). Java adalah bahasa pemrograman untuk berbagai tujuan (general purpose), bahasa pemrogramn yang concurrent, berbasis kelas, dan berorientasi objek, yang dirancang secara khusus untuk memiliki sesedikit mungkin ketergantungan dalam penerapannya.[1]
 
@@ -81,6 +88,13 @@ Java menyediakan seperangkat utilitas konkurensi yang kuat yang menyederhanakan 
 3. **Callable dan Future:**  Callable memungkinkan menjalankan tugas asinkron yang dapat mengembalikan hasil dan menangani pengecualian. Memungkinkan pengelolaan dan pengambilan hasil dari tugas asinkron, dengan opsi untuk memeriksa status, menunggu hasil, atau membatalkan tugas. [5]
 
 ### 2. Go (Golang)
+
+<p align="center">
+  <img alt="Golang Kawaii Logo" src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/Go%20Lang/Golang.png" width="580" >
+  </br>
+  <sub>Golang logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
+
 #### Sejarah
 Go  atau Golang adalah bahasa pemrograman yang bersifat prosedural. Pertama kali dikembangkan di Google sejak 2007 oleh tiga orang yakni, Ken Thompson, Rob Pike, dan Robert Griesemer. Kemudian dirilis ke publik pada 2009 sebagai bahasa program open source. Bahasa program Go didasarkan pada Python, Java dan C++..[2]
 
