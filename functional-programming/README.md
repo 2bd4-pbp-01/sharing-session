@@ -90,22 +90,248 @@ Meskipun begitu, terdapat kekurangan yang dimiliki oleh Functional programming[^
 ## Haskell
 
 ### Overview Haskell
+Haskell adalah Bahasa pemrograman general purpose, statically typed, functional murni yang mendukung type inference, dan lazy evaluation yang pertama muncul di akhir tahun 80an dan mengeluarkan stable release pada tahun 2010. Haskell didesain untuk pengajaran, riset, dan aplikasi industri. Bahasa ini dikenal sebagai pelopor fitur seperti type class dan monadic I/O, serta menggunakan compiler Glasgow Haskell Compiler (GHC).
+
+https://en.wikipedia.org/wiki/Haskell
+
+Di Haskell, function dan value diperlakukan sama yaitu dengan mengevaluasi expression bukan mengeksekusi perintah. Haskell beroperasi berdasarkan konsep pure expression, yang memiliki sifat immutable (value tidak dapat diubah), tanpa side effects (tidak mengubah state), dan deterministic (argumen yang sama menghasilkan output yang sama).
+
+https://global.thepower.education/blog/what-is-haskell-and-what-is-it-for
+
+Dengan dukungan lazy evaluation, expression dalam Haskell hanya dievaluasi ketika dibutuhkan, yang bisa meningkatkan performa namun membuat penggunaan memori saat runtime tidak dapat diprediksi. Haskell juga merupakan bahasa dengan static typing, artinya tipe setiap expression ditentukan saat kompilasi, sehingga program dengan type error tidak dapat dikompilasi atau dijalankan.
+
+https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics
 
 ### Tipe Data (_Data Type_)
+Haskell mendukung type inference dimana compiler akan tau tipe data yang digunakan namun programmer bisa secara eksplisit mendeklarasi data type yang digunakan menggunakan syntax sebagai berikut
+``` 
+x :: Int   
+x = 3 
+```
+
+1. Basic Data Types
+- Int = Menampung value angka dan dipastikan bisa menampung value paling tidak ±2^29 tapi sizenya bergantung pada arsitektur mesin yang dipakai (mesin 64-bit bisa sampai ±2^63)
+- Integer = Menampung value angka dan kapasitasnya dibatasi memory mesin yang dipakai
+- Float = Single precision floating-point numbers, jarang dipakai karena kurang presisi
+- Double = Double-precision floating-point numbers, lebih sering dipakai untuk angka berdesimal
+- Boolean = Berisi logical value 'true' dan 'false' 
+- Char = Menampung satu karakter unicode
+
+https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics
+
+2. Composite Data Types 
+- List = Kumpulan terurut element dengan satu tipe data yang sama
+- String = List of Char
+- Tuple = Kumpulan terurut element bertipe apapun
+
+https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics
+
+3. Algebraic Data Types
+- Enumeration = 
+``` 
+data Thing = Shoe   
+      | Ship     
+      | SealingWax  
+      | Cabbage  
+      | King  
+  deriving Show
+```
+
+https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/2-algebraic-data-types
+
+4. Type Classes  
+Type Class adalah serangkaian method yang digunakan bersama oleh beberapa type, konsepnya mirip dengan generic programming.  
+
+Contoh typeclass:
+```
+class Num a where
+  (+) :: a -> a -> a
+  (-) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a
+```
+Agar suatu tipe termasuk dalam type class Num, tipe tersebut perlu mengimplementasikan metode-metodenye dan metode tersebut hanya bisa dipakai pada tipe yang memiliki instance Num. Jika metode tersebut mengambil anggota diluar typeclassnya code tidak akan tercompile.
+
+Penggunaan
+```
+plusOnePoly :: Num a => a -> a
+plusOnePoly a = a + 1
+```
+https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/5-type-classes
+
+https://serokell.io/blog/haskell-typeclasses
 
 ### Modularitas
+1. Self-Defined Moduls
+```
+module Geometry
+( sphereVolume
+, sphereArea
+) where
+
+sphereVolume :: Float -> Float
+sphereVolume radius = (4.0 / 3.0) * pi * (radius ^ 3)
+
+sphereArea :: Float -> Float
+sphereArea radius = 4 * pi * (radius ^ 2)
+```
+2. Standard Library  
+Syntax untuk mengimpor modul dalam skrip Haskell adalah 
+```
+import <nama modul>
+
+contoh:
+import Data.List
+```
+Dan cara pemakaiannya mirip dengan memanggil modul biasa seperti contoh berikut dalam library data list:
+```
+numUniques :: (Eq a) => [a] -> Int
+numUniques = length . nub
+```
+
+3. External Library / Dependecies
+Untuk mengimport external shared library kita perlu menggunakan Cabal dan cara meniginstall dan menggunakannya adalah sebagai berikut:
+```
+Install:
+cabal install cabal-install
+cabal --version
+
+Import library:
+import <nama.External.Library>
+```
+
+https://learnyouahaskell.com/modules#making-our-own-modules
 
 ### Keamanan Tipe (_Type Safety_)
+Haskell merupakan bahasa pemrograman yang statically typed dimana program dievaluasi oleh kompiler dan dikompilasi menjadi bytecode sebelum dijalankan.
+
+Program Haskell harus diperiksa tipenya sebelum dikompilasi dan kode dieksekusi. Jika ada kesalahan dalam tipe data, kode akan gagal dicompile dan tidakbisa dijalankan. Haskell hanya melakukan pemeriksaan tipe satu kali, yang membantu meningkatkan kinerja secara keseluruhan, dibandingkan dengan bahasa lain seperti Java yang melakukannya lebih dari satu kali.
+
+Haskell dianggap kuat karena risiko kesalahannya rendah. Error safety pada waktu kompilasi bagus, yang berarti setelah dikompilasi kode pasti bisa berfungsi dengan baik.
+
+https://scrapingrobot.com/blog/haskell-programing-language/
 
 ### Error dan Exception Handling
+1. Exception  
+Unexpected code path, biasanya disebabkan oleh kesalahan IO seperti file handling, network failures, atau system-level issues lain.  
+Syntax yang digunakan:
+```
+import Control.Exception (Exception, throw, try, SomeException)
+
+-- Define a custom exception
+data MyException = SomethingWentWrong deriving (Show, Typeable)
+instance Exception MyException
+
+-- Example function that throws an exception
+riskyFunction :: IO ()
+riskyFunction = throw SomethingWentWrong
+
+-- Handling the exception
+main :: IO ()
+main = do
+  result <- try riskyFunction :: IO (Either SomeException ())
+  case result of
+    Left ex  -> putStrLn $ "Caught exception: " ++ show ex
+    Right _  -> putStrLn "Everything went fine"
+```
+
+2. Pure Code   
+Method ini harus dihindari dalam kebanyakan kasus karena penggunaan error akan membuat program crash jika terjadi situasi yang tidak valid.  
+Method ini dapat digunakan dalam skenario sederhana ketika kegagalan tidak dapat dihindari atau logika program sudah rusak.  
+Alternatif yang lebih aman seperti Maybe atau Either harus lebih dipilih untuk mencegah terjadinya crash.
+
+Syntax yang digunakan:
+```
+-- Using error in pure code (not recommended for safe programs)
+headSafe :: [a] -> a
+headSafe [] = error "empty list"
+headSafe (x:_) = x
+```
+3. Either Type  
+Gunakan Either ketika kesalahan expected dan merupakan bagian dari regular program logic. Either memungkinkan pengembalian error beserta hasil yang berhasil secara terstruktur. Hal ini umum terjadi dalam penguraian, validasi, atau perhitungan dimana kesalahan bersifat biasa dan tidak menunjukkan logika yang rusak, hanya input yang salah.
+
+Syntax yang digunakan:
+```
+-- Define an error type
+data ParseError = ParseError String deriving (Show)
+
+-- A function that returns Either error or success
+parseValue :: String -> Either ParseError Int
+parseValue str =
+  case reads str of
+    [(val, "")] -> Right val
+    _           -> Left (ParseError "Failed to parse the integer")
+
+-- Handling the Either result
+main :: IO ()
+main = do
+  let result = parseValue "123a"
+  case result of
+    Left err     -> print ("Error: " ++ show err)
+    Right value  -> print ("Parsed value: " ++ show value)
+```
+
+4. Missing Value dengan Maybe  
+Gunakan Maybe saat tidak adanya nilai bukan menunjukan kesalahan tetapi kondisi normal. Maybe berguna ketika expected suatu value mungkin tidak ada, tetapi tidak perlu menjelaskan mengapa value itu tidak ada. Contohnya seperti pada search engine.
+
+Syntax yang digunakan:
+```
+-- Lookup function returning Maybe
+lookupValue :: Eq a => a -> [(a, b)] -> Maybe b
+lookupValue key list = lookup key list
+
+-- Handling the Maybe result
+main :: IO ()
+main = do
+  let dictionary = [("age", 25), ("name", "John")]
+  case lookupValue "age" dictionary of
+    Nothing    -> putStrLn "No value found"
+    Just value -> putStrLn $ "Found value: " ++ show value
+
+-- Or using the maybe function for simpler code
+main2 :: IO ()
+main2 = do
+  let dictionary = [("age", 25), ("name", "John")]
+  putStrLn $ maybe "No value found" (\v -> "Found value: " ++ show v) (lookupValue "age" dictionary)
+```
+
+https://wiki.haskell.org/Handling_errors_in_Haskell
 
 ### Fun Facts
+- Pada bulan Mei 2021 Haskell merupakan Bahasa pemrograman terpopuler ke-28 berdasarkan pencarian tutorial pada search engine dan memiliki pengguna aktif GitHub aktif sebanyak kurang dari 1%
+
+https://en.wikipedia.org/wiki/Haskell
+"PYPL PopularitY of Programming Language index". pypl.github.io. May 2021. Archived from the original on 7 May 2021. Retrieved 16 May 2021.
+
+- Haskell memiliki beberapa versi sebelum menjadi Haskell pada hari ini yaitu versi 1.0, 1.1, 1.2, 1.3, 1.4, dan 98
+
+https://en.wikipedia.org/wiki/Haskell
+Hudak, Paul; Hughes, John; Peyton Jones, Simon; Wadler, Philip (2007). "A history of Haskell" (PDF). Proceedings of the third ACM SIGPLAN conference on History of programming languages. pp. 12–1–55. doi:10.1145/1238844.1238856. ISBN 978-1-59593-766-7. S2CID 52847907.
 
 #### Memory Management
+Komputasi Haskell menghasilkan banyak memory garbage yang jauh lebih banyak daripada bahasa imperatif konvensional. Hal ini dikarenakan data tidak dapat diubah sehingga satu-satunya cara untuk menyimpan hasil setiap operasi berikutnya adalah dengan membuat nilai baru. Khususnya, setiap iterasi perhitungan rekursif menghasilkan nilai baru. Namun GHC mampu mengelola garbage collection secara efisien, sehingga tidak jarang untuk menghasilkan 1gb data per detik (sebagian besar akan langsung masuk garbage collector).
+
+https://wiki.haskell.org/GHC/Memory_Management
+Parallel Generational-Copying Garbage Collection with a Block-Structured Heap (2008)
 
 #### High-Order Function
+Fungsi pada Haskell dapat mengambil fungsi lain sebagai parameter dan mengembalikan fungsi sebagai return value. Fungsi yang melakukan salah satu dari itu disebut High-Order Function. Jika ingin mendefinisikan komputasi hanya dengan mendefinisikan apa yang ingin dituju dan bukan step-by-step Hig-Orger Function tidak bisa tergantikan.
+
+https://learnyouahaskell.com/higher-order-functions
+https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/4-higher-order-programming-and-type-inference#anonymous-functions
 
 #### Monad
+Konsep dasar yang digunakan untuk menangani komputasi yang mencakup side effect (seperti state, IO, exceptions, atau non-determinism) dengan cara yang murni fungsional. Monad menyediakan struktur yang konsisten untuk operasi berantai (chain operation), mengelola konteks (seperti possible failure, state transitions, or IO operations), dan mengabstraksi side effect.
+
+Monad dalam Haskell adalah type class dengan tiga komponen utama:
+- return (atau pure dalam konteks Applicative): Wrapping nilai dalam konteks monad.
+- (>>=) (bind): Merantai operasi manjadi satu, meneruskan hasil dari satu operasi ke operasi berikutnya.
+- Hukum monad: Tiga hukum yang memastikan bahwa monad berperilaku secara konsisten.
+
+https://wiki.haskell.org/All_About_Monads
 
 ---
 
