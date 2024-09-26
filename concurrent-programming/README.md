@@ -162,6 +162,11 @@ Jika tidak dikelola dengan benar, aplikasi Java dapat mengalami masalah liveness
 
 ### Race Condition
 
+Race condition adalah masalah umum dalam pemrograman concurrent yang terjadi ketika hasil akhir dari program bergantung pada urutan atau timing dari eksekusi thread. Kondisi ini dapat menyebabkan perilaku tak terduga, yang sering kali sulit untuk di-debug.
+![image](https://uploads.sitepoint.com/wp-content/uploads/2017/02/1486567898race-condition.jpg)
+Race condition terjadi ketika dua atau lebih thread atau proses secara bersamaan mengakses dan memodifikasi shared resource tanpa adanya mekanisme sinkronisasi yang memadai. Hal ini menyebabkan urutan eksekusi yang tidak terprediksi, yang dapat menyebabkan bug atau hasil yang tidak diinginkan.
+
+
 ### Deadlock
 
 ---
