@@ -346,6 +346,12 @@ func increment() {
 ### Deadlock
 
 ---
+
+Penanganan Race Condition dengan lock dapat menimbulkan masalah baru, yaitu Deadlock.
+
+Deadlock terjadi ketika sebuah thread menunggu sesuatu yang tidak akan pernah terjadi.
+Biasanya, deadlock terjadi ketika sebuah thread menunggu lock mutex atau semaphore yang tidak pernah di-release (dilepaskan) oleh owner sebelumnya. [[1]](#referensi-4)
+
 <table> 
   <tr> 
     <td><img src="./image/deadlock1.png" style="width:100%; height:auto;" /></td> 
@@ -358,8 +364,22 @@ func increment() {
 </table>
 <center><a href="https://www.craig-wood.com/nick/articles/deadlocks-in-go/"> Sumber Gambar</a></center>
 
-__Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapat melanjutkan eksekusinya karena saling menunggu satu sama lain untuk melepaskan sumber daya yang sedang digunakan. Dalam konteks sistem operasi atau pemrograman multi-threaded, deadlock menjadi masalah serius karena dapat menyebabkan sistem atau aplikasi menjadi tidak responsif.
+__Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapat melanjutkan eksekusinya karena saling menunggu satu sama lain untuk melepaskan _resource_ yang sedang digunakan. Dalam konteks sistem operasi atau pemrograman multi-threaded, deadlock menjadi masalah serius karena dapat menyebabkan sistem atau aplikasi menjadi tidak responsif. [[2]](#referensi-4)
+
+#### Pencegahan Deadlock
+
+- **Lock Ordering**: Deadlock terjadi ketika beberapa thread membutuhkan lock yang sama tetapi diperoleh dalam urutan yang berbeda, dan jika semua kunci lock dalam urutan yang sama oleh setiap thread, deadlock tidak akan terjadi.
+
+- **Lock Timeout**: Menetapkan timeout (batas waktu) penguncian dengan lock, di mana thread yang gagal memperoleh lock akan melepaskan lock, menunggu, dan mencoba lagi, sehingga thread lain mendapat kesempatan.
+
+- **Deadlock Detection**: Setiap kali thread mengambil atau meminta lock, dicatat dalam struktur data seperti map, graph, dll. Jika permintaan lock ditolak, thread dapat memeriksanya untuk mendeteksi deadlock dengan melacak permintaan lock dari thread lain yang terlibat. [[3]](#referensi-4)
+
+#### Referensi
+
+[1] [What is a deadlock? - Stack Overflow](https://stackoverflow.com/questions/34512/what-is-a-deadlock)
+
+[2] [Introduction of Deadlock in Operating System - GeeksforGeeks](https://www.geeksforgeeks.org/introduction-of-deadlock-in-operating-system/)
+
+[3] [Deadlock Prevention - Jenkov](https://jenkov.com/tutorials/java-concurrency/deadlock-prevention.html)
 
 [Experiment Deadlock - Ahmad Fatan](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/deadlock)
-
-
