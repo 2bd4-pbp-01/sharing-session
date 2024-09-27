@@ -20,7 +20,7 @@
 ---
 
 ## Paradigma Concurrent
-![Diagram Interaktif](./image/Paradigma%20ConcurrentMM(1).png)
+
 ### Overview
 
 #### Concurrency
