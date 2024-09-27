@@ -21,11 +21,33 @@
 
 ## Paradigma Concurrent
 
+Kata "concurrent" sering kali digunakan dalam dunia pemrograman, di mana proses dapat dilakukan secara konkuren atau tumpang tindih. 
+Namun, beberapa masalah dapat muncul ketika proses berjalan secara concurrent, terutama di dunia industri. 
+Salah satu contohnya adalah kasus
+
+#### **duplicate tweets issue di Twitter pada tahun 2012**, 
+di mana race condition terjadi ketika beberapa pengguna mengirim tweet secara bersamaan, dan sistem tidak
+mampu menangani permintaan tersebut dengan baik. Akibatnya, tweet yang sama muncul lebih dari sekali karena 
+dua proses mencoba memperbarui status tweet secara bersamaan tanpa adanya mekanisme penguncian yang efektif. 
+Twitter akhirnya menangani masalah ini dengan menetapkan peraturan untuk membatasi tweet duplikat.
+Kasus lain yang rentan terjadi adalah pada 
+#### **Shopee saat 9.9 Super Shopping Day pada tahun 2020**, 
+di mana pelanggan melaporkan bahwa mereka dapat memesan barang yang seharusnya sudah habis. Masalah 
+ini disebabkan oleh lonjakan pesanan yang sangat cepat, yang mengakibatkan keterlambatan dalam pembaruan stok. 
+Keduanya menunjukkan bagaimana concurrent processing dapat menyebabkan masalah yang signifikan tanpa adanya pengelolaan
+yang tepat.
+
 ### Overview
 
 #### Concurrency
 Concurrency berarti multiple computations yang terjadi secara bersamaan tanpa harus menunggu computation lainnya diselesaikan terlebih dahulu. 
 Dalam pemrograman modern, concurrency sangat penting karena: [1][2]
+
+<p align="center">
+  <img alt="Java Kawaii Logo" src="https://i.redd.it/0k7cile8sg771.jpg" width="100%" >
+  </br>
+  <sub>Image by <a href="https://www.reddit.com/r/rustjerk/comments/o7utj1/this_is_how_programming_without_fearless/">Reddit</a></sub>
+</p>
 
 1. Situs web harus menangani banyak pengguna secara bersamaan.
 2. Aplikasi mobile sering melakukan pemrosesan di server ("di cloud").
@@ -44,6 +66,12 @@ Ada dua model umum untuk Concurrent programming: [1]
 2. Message Passing: Modul-modul berinteraksi dengan mengirim pesan melalui saluran komunikasi, di mana pesan yang masuk dikelola dalam antrean.
 
 ### Concurrent vs Asynchronous vs MultiThread vs Parallel
+
+<p align="center">
+  <img alt="Java Kawaii Logo" src="https://miro.medium.com/v2/resize:fit:810/1*pexiz0fTzx7tfc9nE_vaAw.jpeg" width="30%" >
+  </br>
+  <sub>Image by <a href="https://medium.com/pythoneers/a-deep-dive-into-pythons-asyncio-module-c53842827b45">Medium</a></sub>
+</p>
 
 #### Concurrency :
 Concurrency adalah konsep di mana banyak tugas dapat berjalan tumpang tindih atau bersamaan. 
@@ -313,9 +341,13 @@ func increment() {
 }
 ```
 
-#### Pranala Menarik
 
-- [Eksperimen Race Condition](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/race_condition)
+
+#### Experiment
+[Eksperimen Race Condition](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/race_condition)
+
+
+#### Pranala Menarik
 
 - [2012 Twitter duplicate tweets issue](https://www.socialmediatoday.com/news/twitter-implements-new-rules-to-limit-the-reach-of-duplicated-tweets/623531)
     <details>
@@ -342,6 +374,8 @@ func increment() {
 ### Deadlock
 
 ---
+
+
 
 Penanganan Race Condition dengan lock dapat menimbulkan masalah baru, yaitu Deadlock.
 
@@ -370,6 +404,9 @@ __Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapa
 
 - **Deadlock Detection**: Setiap kali thread mengambil atau meminta lock, dicatat dalam struktur data seperti map, graph, dll. Jika permintaan lock ditolak, thread dapat memeriksanya untuk mendeteksi deadlock dengan melacak permintaan lock dari thread lain yang terlibat. [[3]](#referensi-4)
 
+#### Experiment Deadlock
+[Experiment Deadlock - Ahmad Fatan](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/deadlock)
+
 #### Referensi
 
 [1] [What is a deadlock? - Stack Overflow](https://stackoverflow.com/questions/34512/what-is-a-deadlock)
@@ -378,4 +415,4 @@ __Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapa
 
 [3] [Deadlock Prevention - Jenkov](https://jenkov.com/tutorials/java-concurrency/deadlock-prevention.html)
 
-[Experiment Deadlock - Ahmad Fatan](https://github.com/2bd4-pbp-01/pbp_12_experiment/tree/main/deadlock)
+
