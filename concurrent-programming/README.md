@@ -51,7 +51,7 @@ Dalam pemrograman modern, concurrency sangat penting karena: [1][2]
 
 1. Situs web harus menangani banyak pengguna secara bersamaan.
 2. Aplikasi mobile sering melakukan pemrosesan di server ("di cloud").
-3. Graphical user interfaces memerlukan pekerjaan latar belakang yang tidak mengganggu pengguna.
+3. Graphical user interfaces memerlukan background task yang tidak mengganggu pengguna.
 
 #### Concurrent Programming 
 Concurrent Programming adalah model pemrograman yang memungkinkan berbagai bagian dari program berjalan secara concurrent atau tumpang tindih. 
