@@ -1,11 +1,5 @@
 # Functional Programming
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/Haskell/haskell.png" alt="haskell kawaii logo" />
-  </br>
-  <sub>Haskell logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
-</p>
-
 #### Daftar Isi
 
 - [Functional Programming](#functional)
@@ -28,6 +22,8 @@
   - [Pranala Menarik](#pranala-menarik)
   - [Haskell Development Environments](#haskell-development-environments)
   - [2D Graphics with OpenGL dan Haskell](#2d-graphics-dengan-opengl-dan-haskell)
+
+- [Referensi](#referensi)
 
   ***
 
@@ -95,19 +91,21 @@ Meskipun begitu, terdapat kekurangan yang dimiliki oleh Functional programming[^
 
 ## Haskell
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SAWARATSUKI/KawaiiLogos/refs/heads/main/Haskell/haskell.png" alt="haskell" />
+  </br>
+  <sub>Haskell logo by <a href="https://github.com/SAWARATSUKI/KawaiiLogos/tree/main/Haskell">Sawaratsuki</a></sub>
+</p>
+
 ### Overview Haskell
 
 Haskell adalah Bahasa pemrograman general purpose, statically typed, functional murni yang mendukung type inference, dan lazy evaluation yang pertama muncul di akhir tahun 80an dan mengeluarkan stable release pada tahun 2010. Haskell didesain untuk pengajaran, riset, dan aplikasi industri. Bahasa ini dikenal sebagai pelopor fitur seperti type class dan monadic I/O, serta menggunakan compiler Glasgow Haskell Compiler (GHC).
 
-<https://en.wikipedia.org/wiki/Haskell>
+Di Haskell, function dan value diperlakukan sama yaitu dengan mengevaluasi expression bukan mengeksekusi perintah. Haskell beroperasi berdasarkan konsep pure expression, yang memiliki sifat immutable (value tidak dapat diubah), tanpa side effects (tidak mengubah state), dan deterministic (argumen yang sama menghasilkan output yang sama)[^5].
 
-Di Haskell, function dan value diperlakukan sama yaitu dengan mengevaluasi expression bukan mengeksekusi perintah. Haskell beroperasi berdasarkan konsep pure expression, yang memiliki sifat immutable (value tidak dapat diubah), tanpa side effects (tidak mengubah state), dan deterministic (argumen yang sama menghasilkan output yang sama).
-
-<https://global.thepower.education/blog/what-is-haskell-and-what-is-it-for>
+[^5]: <https://global.thepower.education/blog/what-is-haskell-and-what-is-it-for>
 
 Dengan dukungan lazy evaluation, expression dalam Haskell hanya dievaluasi ketika dibutuhkan, yang bisa meningkatkan performa namun membuat penggunaan memori saat runtime tidak dapat diprediksi. Haskell juga merupakan bahasa dengan static typing, artinya tipe setiap expression ditentukan saat kompilasi, sehingga program dengan type error tidak dapat dikompilasi atau dijalankan.
-
-<https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
 
 ### Tipe Data (_Data Type_)
 
@@ -127,15 +125,11 @@ x = 3
 - **Boolean**: Berisi logical value 'true' dan 'false'
 - **Char**: Menampung satu karakter unicode
 
-<https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
-
 #### 2. Composite Data Types
 
 - **List**: Kumpulan terurut element dengan satu tipe data yang sama
 - **String**: List of Char
 - **Tuple**: Kumpulan terurut element bertipe apapun
-
-<https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics>
 
 #### 3. Algebraic Data Types
 
@@ -150,11 +144,9 @@ data Thing = Shoe
   deriving Show
 ```
 
-<https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/2-algebraic-data-types>
-
 #### 4. Type Classes
 
-Type Class adalah serangkaian method yang digunakan bersama oleh beberapa type, konsepnya mirip dengan generic programming.
+Type `Class` adalah serangkaian method yang digunakan bersama oleh beberapa type, konsepnya mirip dengan generic programming.
 
 Contoh typeclass:
 
@@ -169,7 +161,7 @@ class Num a where
   fromInteger :: Integer -> a
 ```
 
-Agar suatu tipe termasuk dalam type class Num, tipe tersebut perlu mengimplementasikan metode-metodenye dan metode tersebut hanya bisa dipakai pada tipe yang memiliki instance Num. Jika metode tersebut mengambil anggota diluar typeclassnya code tidak akan di-compile.
+Agar suatu tipe termasuk dalam type class `Num`, tipe tersebut perlu mengimplementasikan metode-metodenye dan metode tersebut hanya bisa dipakai pada tipe yang memiliki instance `Num`. Jika metode tersebut mengambil anggota diluar typeclass-nya code tidak akan di-compile.
 
 Penggunaan
 
@@ -177,10 +169,6 @@ Penggunaan
 plusOnePoly :: Num a => a -> a
 plusOnePoly a = a + 1
 ```
-
-<https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/5-type-classes>
-
-<https://serokell.io/blog/haskell-typeclasses>
 
 ### Modularitas
 
@@ -253,17 +241,15 @@ seperti melakukan import pada libary pada umumnya.
 import <nama.External.Library>
 ```
 
-<https://learnyouahaskell.com/modules#making-our-own-modules>
-
 ### Keamanan Tipe (_Type Safety_)
 
 Haskell merupakan bahasa pemrograman yang statically typed dimana program dievaluasi oleh kompiler dan dikompilasi menjadi bytecode sebelum dijalankan.
 
-Program Haskell harus diperiksa tipenya sebelum dikompilasi dan kode dieksekusi. Jika ada kesalahan dalam tipe data, kode akan gagal dicompile dan tidakbisa dijalankan. Haskell hanya melakukan pemeriksaan tipe satu kali, yang membantu meningkatkan kinerja secara keseluruhan, dibandingkan dengan bahasa lain seperti Java yang melakukannya lebih dari satu kali.
+Program Haskell harus diperiksa tipenya sebelum dikompilasi dan kode dieksekusi. Jika ada kesalahan dalam tipe data, kode akan gagal dicompile dan tidakbisa dijalankan. Haskell hanya melakukan pemeriksaan tipe satu kali, yang membantu meningkatkan kinerja secara keseluruhan, dibandingkan dengan bahasa lain seperti Java yang melakukannya lebih dari satu kali[^6].
 
 Haskell dianggap kuat karena risiko kesalahannya rendah. Error safety pada waktu kompilasi bagus, yang berarti setelah dikompilasi kode pasti bisa berfungsi dengan baik.
 
-<https://scrapingrobot.com/blog/haskell-programing-language/>
+[^6]: <https://scrapingrobot.com/blog/haskell-programing-language/>
 
 ### Error dan Exception Handling
 
@@ -311,7 +297,7 @@ headSafe (x:_) = x
 
 #### 3. Either Type
 
-Gunakan Either ketika kesalahan expected dan merupakan bagian dari regular program logic. Either memungkinkan pengembalian error beserta hasil yang berhasil secara terstruktur. Hal ini umum terjadi dalam penguraian, validasi, atau perhitungan dimana kesalahan bersifat biasa dan tidak menunjukkan logika yang rusak, hanya input yang salah.
+`Either` digunakan ketika kesalahan expected dan merupakan bagian dari regular program logic. Either memungkinkan pengembalian error beserta hasil yang berhasil secara terstruktur. Hal ini umum terjadi dalam penguraian, validasi, atau perhitungan dimana kesalahan bersifat biasa dan tidak menunjukkan logika yang rusak, hanya input yang salah.
 
 Berikut contohnya:
 
@@ -337,7 +323,7 @@ main = do
 
 #### 4. Missing Value dengan Maybe
 
-Gunakan Maybe saat tidak adanya nilai bukan menunjukan kesalahan tetapi kondisi normal. Maybe berguna ketika expected suatu value mungkin tidak ada, tetapi tidak perlu menjelaskan mengapa value itu tidak ada. Contohnya seperti pada search engine.
+`Maybe` digunakan saat tidak adanya nilai bukan menunjukan kesalahan tetapi kondisi normal. `Maybe` berguna ketika expected suatu value mungkin tidak ada, tetapi tidak perlu menjelaskan mengapa value itu tidak ada. Contohnya seperti pada search engine[^12].
 
 Berikut contohnya:
 
@@ -361,39 +347,35 @@ main2 = do
   putStrLn $ maybe "No value found" (\v -> "Found value: " ++ show v) (lookupValue "age" dictionary)
 ```
 
-<https://wiki.haskell.org/Handling_errors_in_Haskell>
+[^12]: <https://wiki.haskell.org/Handling_errors_in_Haskell>
 
 ### Fun Facts
 
-- Pada bulan Mei 2021 Haskell merupakan Bahasa pemrograman terpopuler ke-28 berdasarkan pencarian tutorial pada search engine dan memiliki pengguna aktif GitHub aktif sebanyak kurang dari 1%
+- Pada bulan Mei 2021 Haskell merupakan Bahasa pemrograman terpopuler ke-28 berdasarkan pencarian tutorial pada search engine dan memiliki pengguna aktif GitHub aktif sebanyak kurang dari 1%[^7].
 
-<https://en.wikipedia.org/wiki/Haskell>
-"PYPL PopularitY of Programming Language index". pypl.github.io. May 2021. Archived from the original on 7 May 2021. Retrieved 16 May 2021.
+[^7]: "PYPL PopularitY of Programming Language index". pypl.github.io. May 2021. Archived from the original on 7 May 2021. Retrieved 16 May 2021.
 
-- Haskell memiliki beberapa versi sebelum menjadi Haskell pada hari ini yaitu versi 1.0, 1.1, 1.2, 1.3, 1.4, dan 98
+- Haskell memiliki beberapa versi sebelum menjadi Haskell pada hari ini yaitu versi 1.0, 1.1, 1.2, 1.3, 1.4, dan 98[^8].
 
-<https://en.wikipedia.org/wiki/Haskell>
-Hudak, Paul; Hughes, John; Peyton Jones, Simon; Wadler, Philip (2007). "A history of Haskell" (PDF). Proceedings of the third ACM SIGPLAN conference on History of programming languages. pp. 12–1–55. doi:10.1145/1238844.1238856. ISBN 978-1-59593-766-7. S2CID 52847907.
+[^8]: Hudak, Paul; Hughes, John; Peyton Jones, Simon; Wadler, Philip (2007). "A history of Haskell" (PDF). Proceedings of the third ACM SIGPLAN conference on History of programming languages. pp. 12–1–55. doi:10.1145/1238844.1238856. ISBN 978-1-59593-766-7. S2CID 52847907.
 
 #### Memory Management
 
-Komputasi Haskell menghasilkan banyak memory garbage yang jauh lebih banyak daripada bahasa imperatif konvensional. Hal ini dikarenakan data tidak dapat diubah sehingga satu-satunya cara untuk menyimpan hasil setiap operasi berikutnya adalah dengan membuat nilai baru. Khususnya, setiap iterasi perhitungan rekursif menghasilkan nilai baru. Namun GHC mampu mengelola garbage collection secara efisien, sehingga tidak jarang untuk menghasilkan 1gb data per detik (sebagian besar akan langsung masuk garbage collector).
+Komputasi Haskell menghasilkan banyak memory garbage yang jauh lebih banyak daripada bahasa imperatif konvensional. Hal ini dikarenakan data tidak dapat diubah sehingga satu-satunya cara untuk menyimpan hasil setiap operasi berikutnya adalah dengan membuat nilai baru. Khususnya, setiap iterasi perhitungan rekursif menghasilkan nilai baru. Namun GHC mampu mengelola garbage collection secara efisien, sehingga tidak jarang untuk menghasilkan 1gb data per detik (sebagian besar akan langsung masuk garbage collector)[^9][^10].
 
-<https://wiki.haskell.org/GHC/Memory_Management>
-Parallel Generational-Copying Garbage Collection with a Block-Structured Heap (2008)
+[^9]: Marlow, Simon; Harris, Tim; James, Roshan P.; Jones, Simon Peyton. 2008. [_Parallel Generational-Copying Garbage Collection with a Block-Structured Heap_](https://simonmar.github.io/bib/papers/parallel-gc.pdf).
 
 #### High-Order Function
 
-Fungsi pada Haskell dapat mengambil fungsi lain sebagai parameter dan mengembalikan fungsi sebagai return value. Fungsi yang melakukan salah satu dari itu disebut High-Order Function. Jika ingin mendefinisikan komputasi hanya dengan mendefinisikan apa yang ingin dituju dan bukan step-by-step Hig-Orger Function tidak bisa tergantikan.
+Fungsi pada Haskell dapat mengambil fungsi lain sebagai parameter dan mengembalikan fungsi sebagai return value. Fungsi yang melakukan salah satu dari itu disebut High-Order Function. Jika ingin mendefinisikan komputasi hanya dengan mendefinisikan apa yang ingin dituju dan bukan step-by-step Hig-Orger Function tidak bisa tergantikan[^10].
 
-<https://learnyouahaskell.com/higher-order-functions>
-<https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/4-higher-order-programming-and-type-inference#anonymous-functions>
+[^10]: <https://www.schoolofhaskell.com/user/school/starting-with-haskell/introduction-to-haskell/4-higher-order-programming-and-type-inference#anonymous-functions>
 
 #### Monad
 
-Konsep dasar yang digunakan untuk menangani komputasi yang mencakup side effect (seperti state, IO, exceptions, atau non-determinism) dengan cara yang murni fungsional. Monad menyediakan struktur yang konsisten untuk operasi berantai (chain operation), mengelola konteks (seperti possible failure, state transitions, or IO operations), dan mengabstraksi side effect.
+Konsep dasar yang digunakan untuk menangani komputasi yang mencakup side effect (seperti state, IO, exceptions, atau non-determinism) dengan cara yang murni fungsional. Monad menyediakan struktur yang konsisten untuk operasi berantai (chain operation), mengelola konteks (seperti possible failure, state transitions, atau IO operations), dan mengabstraksi side effect.
 
-Monad dalam Haskell adalah type class dengan tiga komponen utama:
+Monad dalam Haskell adalah type class dengan tiga komponen utama[^11]:
 
 - **return (pure dalam konteks applicative)**: Wrapping nilai dalam konteks monad.
 
@@ -408,7 +390,7 @@ Monad dalam Haskell adalah type class dengan tiga komponen utama:
   `p ≡ q` berarti variabel `p` dapat diganti `q` atau sebaliknya, dan perilaku
   dari program tidak akan berubah karena `p` dan `q` ekuivalen.
 
-<https://wiki.haskell.org/All_About_Monads>
+[^11]: <https://wiki.haskell.org/All_About_Monads>
 
 ---
 
@@ -536,3 +518,10 @@ Beberapa library eksternal yang digunakan yaitu
 Haskell adalah Bahasa paling dekat dengan konsep-konsep matematis. Grafik 2d banyak menggunakan operasi geometri, transformasi, dan fungsi matematika lain sehingga penulisan persamaan dan fungsi matematika untuk memanipulasi bangun datar sangat didukung dengan Haskell. Setiap gambar dan trasformasi merupakan hasil dari sebuah fungsi sehingga jika dilakukan manipulasi state sebelumnya tidak akan mempengaruhi gambar baru yang tercipta. Penggunaan Haskell juga lebih mudah karena menggunakan pendekatan deklaratif yang fokusnya lebih ke apa yang ingin digambar dan bukan bagaimana menggambarnya.
 
 ---
+
+### Referensi
+
+- Haskell Official Documentation. Retrieved from: <https://wiki.haskell.org/Haskell>.
+- Lipovača, Miran. 2021. [_Learn You a Haskell_](https://learnyouahaskell.github.io/). Retrieved from 20 Sep 2024.
+- O'Sullivan, Bryan; Stewart, Don; Goerzen, John. 2008. [_Real World Haskell_](https://book.realworldhaskell.org/read/). Retrieved from 26 Sep 2024.
+- Snoyman, Michael, _et al_. 2013. [_School of Haskell_](https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell). Introduction to Haskell. Retrieved from 26 Sep 2024.
