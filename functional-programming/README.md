@@ -35,7 +35,7 @@ Functional programming (FP) adalah paradigma pemrograman yang berfokus pada peng
 
 Dasar-Dasar Functional Programming
 
-1. **Pure Functions**: Fungsi yang selalu memberikan hasil yang sama untuk input yang sama dan tidak memiliki efek samping.
+1. **Pure Functions**: Fungsi yang selalu memberikan hasil yang sama untuk input yang sama dan tidak memiliki side effect.
 
 2. **Immutable Data**: Setelah data dibuat, tidak dapat diubah, sehingga menghindari masalah yang tidak terduga.
 
