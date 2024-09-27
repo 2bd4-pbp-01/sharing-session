@@ -53,11 +53,11 @@ Ada beberapa alasan untuk memilih functional programming[^3]:
 
 2. **Mendukung Pemrograman Paralel**: FP secara alami mendukung pemrograman paralel, karena tidak adanya shared state mengurangi potensi konflik saat fungsi berjalan secara bersamaan.
 
-3. **Memudahkan Testing dan Debugging**: Karena FP menghindari efek samping, testing dan debugging lebih sederhana, karena fungsi tidak bergantung pada status eksternal​
+3. **Memudahkan Testing dan Debugging**: Karena FP menghindari side effect, testing dan debugging lebih sederhana, karena fungsi tidak bergantung pada status eksternal​
 
 4. **Keringkasan**: Mengurangi jumlah kode yang perlu ditulis.
 
-5. **Prediktabilitas**: Kode lebih mudah dipahami karena tidak ada efek samping.
+5. **Prediktabilitas**: Kode lebih mudah dipahami karena tidak ada side effect.
 
 6. **Modularitas**: Fungsi murni dapat digunakan di berbagai tempat tanpa ketergantungan pada konteks luar.
 
@@ -65,7 +65,7 @@ Ada beberapa alasan untuk memilih functional programming[^3]:
 
 Adapun kelebihan yang dimiliki Functional programming[^1], diantaranya:
 
-- **Lebih mudah diuji**: Tanpa adanya efek samping, memverifikasi fungsi dalam FP menjadi lebih sederhana;
+- **Lebih mudah diuji**: Tanpa adanya side effect, memverifikasi fungsi dalam FP menjadi lebih sederhana;
 - **Dukungan parallelism/concurent**: FP mendukung pemrograman paralel, yang sangat berguna di aplikasi yang membutuhkan kinerja tinggi atau skala besar seperti pemrosesan big data dan komputasi terdistribusi;
 - **Modular dan Reusable**: FP mendorong penggunaan kembali fungsi, yang membuat kode lebih modular dan mudah dirawat;
 - Pure function lebih mudah dipahami karena tidak mengubah keadaan dan hanya bergantung pada input;
