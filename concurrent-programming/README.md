@@ -69,18 +69,14 @@ meningkatkan kecepatan eksekusi secara signifikan.
 
 
 #### Perbedaan Concurrency dengan Asynchronus, Multithreading, dan Parallel:
-**Concurrency** berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. 
-Di sini, pemrograman biasanya melibatkan sinkronisasi dan manajemen thread agar tidak terjadi konflik data atau masalah seperti race conditions. 
-Sedangkan Asynchronous Programming fokus pada operasi I/O yang lambat, di mana alih-alih memblokir seluruh program saat menunggu hasil dari operasi tersebut, 
-thread dapat melanjutkan tugas lain. Ini membuat pemrograman asinkron lebih efisien dalam menangani operasi I/O daripada pendekatan concurrent yang sinkron.[3][4]
-Concurrency berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. Di sini, pemrograman biasanya melibatkan sinkronisasi dan 
+**Concurrency** berfokus pada menjalankan banyak tugas yang tumpang tindih dalam satu atau beberapa thread. Di sini, pemrograman biasanya melibatkan sinkronisasi dan 
 manajemen thread agar tidak terjadi konflik data atau masalah seperti race conditions. Sedangkan Asynchronous Programming fokus pada operasi I/O yang lambat, 
 di mana alih-alih memblokir seluruh program saat menunggu hasil dari operasi tersebut, thread dapat melanjutkan tugas lain. Ini membuat pemrograman asinkron 
 lebih efisien dalam menangani operasi I/O daripada pendekatan concurrent yang sinkron. Sementara itu, multithreading dan parallelism adalah teknik untuk meningkatkan concurrency, 
 tetapi dengan pendekatan yang berbeda: multithreading mengizinkan beberapa thread dalam satu proses, sedangkan parallelism membagi tugas ke dalam beberapa CPU untuk dieksekusi bersamaan.
 
 ### Kesimpulan
-**Concurrency, Asynchronous Programming, Multithreading, dan Parallelism adalah teknik untuk mencapai concurrency**, 
+**Asynchronous Programming, Multithreading, dan Parallelism adalah teknik untuk mencapai concurrency**, 
 tetapi masing-masing melakukannya dengan cara yang berbeda. Asynchronous programming lebih fokus pada pengelolaan waktu dan penanganan data yang tidak terduga, 
 memungkinkan tugas menunggu tanpa memblokir aplikasi. Sementara itu, multithreading berfokus pada pemanfaatan sumber daya CPU dengan menjalankan beberapa tugas secara bersamaan, 
 sehingga meningkatkan responsivitas dan efisiensi. Parallelism juga bertujuan untuk meningkatkan concurrency dengan membagi tugas ke beberapa core CPU untuk eksekusi simultan, mempercepat waktu pemrosesan.
