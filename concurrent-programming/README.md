@@ -368,7 +368,7 @@ __Deadlock__ adalah situasi di mana dua atau lebih proses atau thread tidak dapa
 
 #### Pencegahan Deadlock
 
-- **Lock Ordering**: Deadlock terjadi ketika beberapa thread membutuhkan lock yang sama tetapi diperoleh dalam urutan yang berbeda, dan jika semua kunci lock dalam urutan yang sama oleh setiap thread, deadlock tidak akan terjadi.
+- **Lock Ordering**: Deadlock terjadi ketika beberapa thread membutuhkan lock yang sama tetapi diperoleh dalam urutan yang berbeda, dan jika semua lock selalu diambil dalam urutan yang sama oleh setiap thread, deadlock tidak akan terjadi.
 
 - **Lock Timeout**: Menetapkan timeout (batas waktu) penguncian dengan lock, di mana thread yang gagal memperoleh lock akan melepaskan lock, menunggu, dan mencoba lagi, sehingga thread lain mendapat kesempatan.
 
