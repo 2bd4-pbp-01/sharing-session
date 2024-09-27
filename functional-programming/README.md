@@ -387,8 +387,11 @@ Monad dalam Haskell adalah type class dengan tiga komponen utama[^11]:
   - Right identity: `return a` >>= `h` ≡ `h a`
   - Associativity: `m >>= g` >>= `h` ≡ `m >>= (\x -> g x >>= h)`
 
-  `p ≡ q` berarti variabel `p` dapat diganti `q` atau sebaliknya, dan perilaku
-  dari program tidak akan berubah karena `p` dan `q` ekuivalen.
+> [!NOTE]
+> Jika tertarik lebih lanjut mengenai Monad, terdapat [website](https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) yang menjelaskan Monad dengan ilustrasi yang menarik.
+
+`p ≡ q` berarti variabel `p` dapat diganti `q` atau sebaliknya, dan perilaku
+dari program tidak akan berubah karena `p` dan `q` ekuivalen.
 
 [^11]: <https://wiki.haskell.org/All_About_Monads>
 
